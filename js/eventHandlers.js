@@ -172,7 +172,7 @@ const EventHandlers = (function(Utils, UIRenderer, DataManager, TestManager, Gam
         const files = event.target.files;
         if (!files || files.length === 0) return;
         // Pass the file list and a callback to FileHandler
-        FileHandler.handleFileSelection(files, updateQuestionStats); // Callback updates stats after processing
+        FileHandler.handleFileSelection(files, updateFilterDropdownsAndStats); // Callback updates stats after processing
         DOM.fileInput.value = ''; // Clear input so same file can be selected again
     }
 
@@ -191,7 +191,7 @@ const EventHandlers = (function(Utils, UIRenderer, DataManager, TestManager, Gam
         const files = event.dataTransfer.files;
         if (!files || files.length === 0) return;
         // Pass the file list and a callback to FileHandler
-        FileHandler.handleFileSelection(files, updateQuestionStats); // Callback updates stats after processing
+        FileHandler.handleFileSelection(files, updateFilterDropdownsAndStats); // Callback updates stats after processing
     }
 
     // Handlers for settings/danger zone
