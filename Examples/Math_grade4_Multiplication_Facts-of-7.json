@@ -1,0 +1,29 @@
+[
+  {
+    "Question": "Which of the following are multiples of 7?",
+    "Rationale": "7x3=21 and 7x4=28",
+    "hint": "7+7+7+7",
+    "type": "multi-select",
+    "Options": [
+      "21",
+      "13",
+      "27",
+      "28"
+    ],
+    "answer": [
+      "21",
+      "28"
+    ]
+  },
+  {
+    "Question": "True or False 7x7=48",
+    "Rationale": "7x7=49",
+    "hint": "If you add 7 multiple times will you get to the number or will you pass it by?",
+    "type": "single",
+    "Options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  }
+]

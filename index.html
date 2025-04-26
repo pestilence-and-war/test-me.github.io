@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Me</title>
+    <!-- Link to external CSS files -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header id="header">
+            <h1 id="main-title">Quiz Me</h1>
+            <p id="main-subtitle" class="subtitle">What have you mastered today?</p>
+            <!-- Gamification Panel -->
+            <div class="gamification-panel">
+                <div class="stars-container">
+                    <i class="fas fa-star"></i>
+                    <span id="star-count">0</span>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div id="badge-container" class="badge-container"></div>
+            </div>
+        </header>
+
+        <!-- Settings Section -->
+        <div class="settings-panel">
+            <h2>Test Settings</h2>
+
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label for="subject-filter"><i class="fas fa-book"></i> Subject:</label>
+                    <select id="subject-filter">
+                        <option value="all">All Subjects</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="grade-filter"><i class="fas fa-graduation-cap"></i> Grade Level:</label>
+                    <select id="grade-filter">
+                        <option value="all">All Levels</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group identifier-filter">
+                <label for="identifier-filter"><i class="fas fa-tags"></i> Question Set:</label>
+                <select id="identifier-filter">
+                    <option value="all">All Question Sets</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="test-length"><i class="fas fa-ruler"></i> Test Length:</label>
+                <select id="test-length">
+                    <option value="1">Single Question</option>
+                    <option value="5">Short (5 questions)</option>
+                    <option value="10" selected>Medium (10 questions)</option>
+                    <option value="25">Long (25 questions)</option>
+                </select>
+            </div>
+
+            <div class="question-stats" id="question-stats">No questions loaded. Add question files to begin.</div>
+
+            <button id="start-test" class="pulse">
+                <i class="fas fa-play"></i> Start Test
+            </button>
+
+            <div class="file-upload" id="file-upload">
+                <p><i class="fas fa-cloud-upload-alt fa-2x"></i></p>
+                <p>Drag and drop question files here (.json)</p>
+                <p>or</p>
+                <button id="browse-files"><i class="fas fa-folder-open"></i> Browse Files</button>
+                <input type="file" id="file-input" accept=".json" multiple style="display: none;">
+            </div>
+
+            <div class="danger-zone">
+                <button id="reset-badges" class="danger-btn">
+                    <i class="fas fa-sync-alt"></i> Reset Badge Progress
+                </button>
+                <p class="warning-text">This will reset your star count and remove all earned badges.</p>
+
+                <button id="delete-questions" class="danger-btn">
+                    <i class="fas fa-trash-alt"></i> Delete All Questions
+                </button>
+                <p class="warning-text">This will permanently remove all loaded questions.</p>
+            </div>
+        </div>
+
+        <!-- Test Section -->
+        <div class="test-container">
+            <!-- Test Progress Indicator -->
+            <div class="progress">
+                <i class="fas fa-tasks"></i>
+                Question <span id="current-question">1</span> of <span id="total-questions">?</span>
+            </div>
+
+            <div class="question-area">
+                <div class="question" id="question-text"></div>
+                <!-- Hint icon element - initially hidden, hint text in data-hint -->
+                <div class="hint-icon" id="hint-icon" data-hint="">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+            </div>
+
+            <p id="ordering-instructions" class="instructions">Drag and drop the items to put them in the correct
+                order.</p>
+
+            <div class="options" id="options-container"></div>
+            <div class="navigation">
+                <button id="prev-question" disabled>
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button id="submit-answer">
+                    <i class="fas fa-check"></i> Submit Answer
+                </button>
+                <button id="next-question" disabled>
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results">
+            <h2>Test Completed!</h2>
+            <div class="score">Your Score: <span id="final-score">0</span>%</div>
+            <div class="feedback" id="feedback-container"></div>
+            <button id="new-test">
+                <i class="fas fa-redo"></i> Start New Test
+            </button>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript files -->
+    <!-- Order matters: dependencies should be loaded first -->
+    <script src="js/utils.js"></script>
+    <script src="js/dataManager.js"></script>
+    <script src="js/testManager.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/uiRenderer.js"></script>
+    <script src="js/fileHandler.js"></script>
+    <script src="js/eventHandlers.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
