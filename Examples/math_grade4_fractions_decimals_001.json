@@ -1,0 +1,170 @@
+[
+{
+"Question": "Which fraction is equivalent to 1/2?",
+"Options": ["2/4", "3/4", "1/3", "2/3"],
+"answer": "2/4",
+"Rationale": "2 divided by 4 equals 1 divided by 2.",
+"type": "single"
+},
+{
+"Question": "True or False: 0.5 is equal to 1/2",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "0.5 equals 1 divided by 2.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 3/4 = ___/8",
+"Options": null,
+"answer": "6",
+"Rationale": "3/4 equals 6/8.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 0.25, 0.5, 0.75",
+"Options": ["0.25", "0.5", "0.75"],
+"answer": ["0.25", "0.5", "0.75"],
+"Rationale": "0.25 < 0.5 < 0.75.",
+"type": "ordering"
+},
+{
+"Question": "Which of these are equivalent to 0.25?",
+"Options": ["1/4", "2/8", "3/4", "25/100"],
+"answer": ["1/4","2/8","25/100"],
+"Rationale": "1/4, 2/8, and 25/100 equal 0.25.",
+"type": "multi-select"
+},
+{
+"Question": "What is 2/3 + 1/3?",
+"Options": ["1", "2/3", "3/3", "4/3"],
+"answer": "1",
+"Rationale": "2/3 + 1/3 = 3/3 = 1.",
+"type": "single"
+},
+{
+"Question": "Which decimal is equal to 3/10?",
+"Options": ["0.3", "0.03", "0.33", "0.13"],
+"answer": "0.3",
+"Rationale": "3 divided by 10 equals 0.3.",
+"type": "single"
+},
+{
+"Question": "True or False: 0.75 is less than 0.7",
+"Options": ["True", "False"],
+"answer": "False",
+"Rationale": "0.75 is greater than 0.7.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 1/5 = ___/10",
+"Options": null,
+"answer": "2",
+"Rationale": "1/5 equals 2/10.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 0.9, 0.6, 0.3",
+"Options": ["0.9", "0.6", "0.3"],
+"answer": ["0.9", "0.6", "0.3"],
+"Rationale": "0.9 > 0.6 > 0.3.",
+"type": "ordering"
+},
+{
+"Question": "Which fractions are greater than 1/2?",
+"Options": ["1/4", "3/4", "2/3", "1/3"],
+"answer": ["3/4","2/3"],
+"Rationale": "3/4 and 2/3 are greater than 1/2.",
+"type": "multi-select"
+},
+{
+"Question": "What is 0.1 + 0.2?",
+"Options": ["0.3", "0.12", "0.21", "0.4"],
+"answer": "0.3",
+"Rationale": "0.1 plus 0.2 equals 0.3.",
+"type": "single"
+},
+{
+"Question": "True or False: 2/4 equals 1/2",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "2 divided by 4 equals 1 divided by 2.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 0.6 = ___/10",
+"Options": null,
+"answer": "6",
+"Rationale": "0.6 equals 6/10.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 1/3, 1/2, 2/3",
+"Options": ["1/3", "1/2", "2/3"],
+"answer": ["1/3", "1/2", "2/3"],
+"Rationale": "1/3 < 1/2 < 2/3.",
+"type": "ordering"
+},
+{
+"Question": "Which decimals are greater than 0.5?",
+"Options": ["0.25", "0.75", "0.6", "0.4"],
+"answer": ["0.75","0.6"],
+"Rationale": "0.75 and 0.6 are greater than 0.5.",
+"type": "multi-select"
+},
+{
+"Question": "What is 1/4 + 1/4?",
+"Options": ["1/2", "1/4", "2/4", "3/4"],
+"answer": "1/2",
+"Rationale": "1/4 + 1/4 = 2/4 = 1/2.",
+"type": "single"
+},
+{
+"Question": "True or False: 0.2 is equal to 2/10",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "0.2 equals 2 divided by 10.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 5/10 = ___/20",
+"Options": null,
+"answer": "10",
+"Rationale": "5/10 equals 10/20.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 3/4, 1/2, 1/4",
+"Options": ["3/4", "1/2", "1/4"],
+"answer": ["3/4", "1/2", "1/4"],
+"Rationale": "3/4 > 1/2 > 1/4.",
+"type": "ordering"
+},
+{
+"Question": "Which of these are equivalent to 0.1?",
+"Options": ["1/10", "10/100", "1/100", "0.01"],
+"answer": ["1/10","10/100"],
+"Rationale": "1/10 and 10/100 equal 0.1.",
+"type": "multi-select"
+},
+{
+"Question": "What is 0.4 + 0.4?",
+"Options": ["0.8", "0.44", "0.04", "0.6"],
+"answer": "0.8",
+"Rationale": "0.4 plus 0.4 equals 0.8.",
+"type": "single"
+},
+{
+"Question": "True or False: 1/3 is greater than 1/2",
+"Options": ["True", "False"],
+"answer": "False",
+"Rationale": "1/3 is less than 1/2.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 0.9 = ___/10",
+"Options": null,
+"answer": "9",
+"Rationale": "0.9 equals 9/10.",
+"type": "fill-in"
+}
+]

@@ -1,0 +1,163 @@
+[
+{
+"Question": "What is the value of the digit 7 in 7,432?",
+"Options": ["7", "70", "700", "7,000"],
+"answer": "7,000",
+"Rationale": "7 is in the thousands place.",
+"type": "single"
+},
+{
+"Question": "True or False: In 5,689, the 8 is in the tens place.",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "8 is in the tens place.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: The digit 3 in 3,245 has a value of ___",
+"Options": null,
+"answer": "3,000",
+"Rationale": "3 is in the thousands place.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 4,321; 3,456; 5,210",
+"Options": ["4,321", "3,456", "5,210"],
+"answer": ["3,456", "4,321", "5,210"],
+"Rationale": "3,456 < 4,321 < 5,210.",
+"type": "ordering"
+},
+{
+"Question": "Which numbers have a 5 in the hundreds place?",
+"Options": ["5,432", "3,582", "4,567", "2,345"],
+"answer": ["3,582","4,567"],
+"Rationale": "3,582 and 4,567 have 5 in the hundreds place.",
+"type": "multi-select"
+},
+{
+"Question": "What is 3,000 + 400 + 20 + 5?",
+"Options": ["3,425", "3,405", "3,4250", "3,245"],
+"answer": "3,425",
+"Rationale": "Expanded form sums to 3,425.",
+"type": "single"
+},
+{
+"Question": "True or False: 6,000 is greater than 5,999",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "6,000 > 5,999.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: The digit 9 in 9,876 has a value of ___",
+"Options": null,
+"answer": "9,000",
+"Rationale": "9 is in the thousands place.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 2,345; 4,321; 3,210",
+"Options": ["2,345", "4,321", "3,210"],
+"answer": ["4,321", "3,210", "2,345"],
+"Rationale": "4,321 > 3,210 > 2,345.",
+"type": "ordering"
+},
+{
+"Question": "Which numbers have a 2 in the thousands place?",
+"Options": ["2,345", "3,245", "2,789", "4,234"],
+"answer": ["2,345","2,789"],
+"Rationale": "2,345 and 2,789 have 2 in the thousands place.",
+"type": "multi-select"
+},
+{
+"Question": "A farmer has 3 boxes with 24 apples each. How many apples in total?",
+"Options": ["72", "48", "36", "64"],
+"answer": "72",
+"Rationale": "3 x 24 = 72 apples.",
+"type": "single"
+},
+{
+"Question": "True or False: 5,000 - 500 = 4,500",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "5,000 minus 500 equals 4,500.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 250 + 150 = ___",
+"Options": null,
+"answer": "400",
+"Rationale": "250 + 150 = 400.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 1,234; 2,345; 3,456",
+"Options": ["1,234", "2,345", "3,456"],
+"answer": ["1,234", "2,345", "3,456"],
+"Rationale": "1,234 < 2,345 < 3,456.",
+"type": "ordering"
+},
+{
+"Question": "Which numbers are greater than 4,000?",
+"Options": ["3,999", "4,001", "4,500", "3,500"],
+"answer": ["4,001","4,500"],
+"Rationale": "4,001 and 4,500 are greater than 4,000.",
+"type": "multi-select"
+},
+{
+"Question": "A book costs $12. How much for 5 books?",
+"Options": ["60", "50", "55", "65"],
+"answer": "60",
+"Rationale": "$12 x 5 = $60.",
+"type": "single"
+},
+{
+"Question": "True or False: 3,000 + 2,000 = 6,000",
+"Options": ["True", "False"],
+"answer": "False",
+"Rationale": "3,000 + 2,000 = 5,000.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 900 - 450 = ___",
+"Options": null,
+"answer": "450",
+"Rationale": "900 minus 450 equals 450.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 7,000; 6,500; 6,000",
+"Options": ["7,000", "6,500", "6,000"],
+"answer": ["7,000", "6,500", "6,000"],
+"Rationale": "7,000 > 6,500 > 6,000.",
+"type": "ordering"
+},
+{
+"Question": "Which numbers are less than 2,000?",
+"Options": ["1,500", "2,100", "1,999", "2,000"],
+"answer": ["1,500","1,999"],
+"Rationale": "1,500 and 1,999 are less than 2,000.",
+"type": "multi-select"
+},
+{
+"Question": "A class has 4 groups of 6 students. How many students total?",
+"Options": ["20", "24", "28", "30"],
+"answer": "24",
+"Rationale": "4 x 6 = 24 students.",
+"type": "single"
+},
+{
+"Question": "True or False: 2,500 + 2,500 = 5,000",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "2,500 + 2,500 = 5,000.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 1,000 - 250 = ___",
+"Options": null,
+"answer": "750",
+"Rationale": "1,000 minus 250 equals 750.",
+"type": "fill-in"
+}
+]

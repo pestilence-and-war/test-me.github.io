@@ -1,0 +1,204 @@
+[
+  {
+    "Question": "How many triangles are present in the image below?<br><br><svg width='150' height='150' xmlns='http://www.w3.org/2000/svg'>\n  <polygon points='50,20 150,20 100,120' fill='lightblue'/>\n  <polygon points='20,80 80,80 50,150' fill='lightgreen'/>\n  <polygon points='120,80 180,80 150,150' fill='lightcoral'/>\n</svg>",
+    "Options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "Rationale": "Each colored shape is a triangle. The image contains a lightblue triangle, a lightgreen triangle, and a lightcoral triangle. Choosing '1' suggests only identifying one of the shapes. Choosing '2' misses one of the triangles. Choosing '4' is an incorrect count of the visible triangles.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the number of circles in the following image.<br><br><svg width='150' height='150' xmlns='http://www.w3.org/2000/svg'>\n  <circle cx='50' cy='50' r='20' fill='yellow'/>\n  <circle cx='150' cy='50' r='20' fill='orange'/>\n  <circle cx='100' cy='150' r='20' fill='purple'/>\n</svg>",
+    "Options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "Rationale": "The image shows three distinct circles. Selecting '1' indicates only seeing one circle. Selecting '2' misses one of the circles. Selecting '4' is an incorrect count of the circles shown.",
+    "type": "single"
+  },
+  {
+    "Question": "How many squares are shown in the image?<br><br><svg width='150' height='150' xmlns='http://www.w3.org/2000/svg'>\n  <rect width='50' height='50' x='25' y='25' fill='red'/>\n  <rect width='50' height='50' x='100' y='25' fill='blue'/>\n</svg>",
+    "Options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "2",
+    "Rationale": "The image displays two rectangles, which are a type of square. Choosing '0' means the student didn't identify any squares. Choosing '1' means they only found one of the squares. Choosing '3' is an incorrect count of the squares.",
+    "type": "single"
+  },
+  {
+    "Question": "How many lines are used to create the letter 'X' in the image?<br><br><svg width='150' height='150' xmlns='http://www.w3.org/2000/svg'>\n  <line x1='20' y1='20' x2='180' y2='180' stroke='black' stroke-width='5'/>\n  <line x1='180' y1='20' x2='20' y2='180' stroke='black' stroke-width='5'/>\n</svg>",
+    "Options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "Rationale": "The letter 'X' is formed by two intersecting lines. Choosing '1' indicates the student only identified one line. Choosing '3' or '4' is an incorrect count of the lines used to make the 'X'.",
+    "type": "single"
+  },
+  {
+    "Question": "How many apples are shown below?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"green\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"40\" cy=\"25\" r=\"20\" stroke=\"green\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+    "Options": ["1", "2", "3", "4"],
+    "answer": "2",
+    "Rationale": "Counting the images, there are two red circles representing apples. The first option, '1', only counts one apple. The third option, '3', overcounts the number of apples. The fourth option, '4', significantly overcounts the number of apples.",
+    "type": "single"
+  },
+  {
+    "Question": "What number comes after 3?",
+    "Options": ["2", "4", "5", "1"],
+    "answer": "4",
+    "Rationale": "The number that directly follows 3 in the counting sequence is 4.  '2' comes *before* 3. '5' is two numbers after 3. '1' is before 3.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the triangles:<br><br><svg width=\"150\" height=\"150\">\n  <polygon points=\"10,10 50,10 50,40\" style=\"fill:lime;stroke:purple;stroke-width:1\"/>\n  <polygon points=\"60,10 100,10 100,40\" style=\"fill:lime;stroke:purple;stroke-width:1\"/>\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "2",
+    "Rationale": "There are two distinct triangle shapes in the image. '0' suggests no triangles are present, which is incorrect. '1' only counts one of the triangles. '3' overestimates the number of triangles.",
+    "type": "single"
+  },
+  {
+    "Question": "Fill in the blank: 1, 2, ____",
+    "Options": ["0", "3", "4", "5"],
+    "answer": "3",
+    "Rationale": "The sequence is a simple counting order. After 2 comes 3. '0' is before 1. '4' and '5' are too high in the sequence.",
+    "type": "single"
+  },
+  {
+    "Question": "How many squares are there?<br><br><svg width=\"150\" height=\"150\">\n  <rect width=\"50\" height=\"50\" style=\"fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)\"/>\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "The image shows one rectangular shape, which is a type of square. '0' would imply there are no squares, which is incorrect. '2' and '3' overestimate the number of squares.",
+    "type": "single"
+  },
+  {
+    "Question": "True or False: The image below shows three circles.<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"25\" r=\"15\" stroke=\"black\" stroke-width=\"3\" fill=\"orange\" />\n  <circle cx=\"100\" cy=\"25\" r=\"15\" stroke=\"black\" stroke-width=\"3\" fill=\"orange\" />\n</svg>",
+    "Options": ["True", "False"],
+    "answer": "False",
+    "Rationale": "The image shows only two orange circles. The statement that there are three circles is incorrect.",
+    "type": "single"
+  },
+  {
+    "Question": "How many circles are shown below?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "'0' suggests no circles are present, which is incorrect. '2' and '3' overestimate the number of circles. There is only one circle.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the squares:<br><br><svg width=\"150\" height=\"150\">\n  <rect width=\"50\" height=\"50\" style=\"fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"75\" width=\"50\" height=\"50\" style=\"fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "2",
+    "Rationale": "'0' suggests no squares are present, which is incorrect. '1' only counts one of the squares. '3' overestimates the number of squares. There are two squares.",
+    "type": "single"
+  },
+  {
+    "Question": "How many triangles are there?<br><br><svg width=\"150\" height=\"150\">\n  <polygon points=\"75,10 10,140 140,140\" style=\"fill:lime;stroke:purple;stroke-width:1\"/>\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "'0' suggests no triangles are present, which is incorrect. '2' and '3' overestimate the number of triangles. There is only one triangle.",
+    "type": "single"
+  },
+  {
+    "Question": "How many shapes are red?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" width=\"50\" height=\"50\" style=\"fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "'0' suggests no red shapes are present, which is incorrect. '2' and '3' overestimate the number of red shapes. Only the circle is red.",
+    "type": "single"
+  },
+  {
+    "Question": "How many shapes are blue?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" width=\"50\" height=\"50\" style=\"fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "'0' suggests no blue shapes are present, which is incorrect. '2' and '3' overestimate the number of blue shapes. Only the square is blue.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the circles:<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"yellow\" />\n  <circle cx=\"75\" cy=\"75\" r=\"20\" fill=\"yellow\" />\n  <circle cx=\"120\" cy=\"30\" r=\"20\" fill=\"yellow\" />\n</svg>",
+    "Options": ["1", "2", "3", "4"],
+    "answer": "3",
+    "Rationale": "There are three yellow circles. '1' and '2' underestimate the number of circles. '4' overestimates the number of circles.",
+    "type": "single"
+  },
+  {
+    "Question": "How many squares are there?<br><br><svg width=\"150\" height=\"150\">\n  <rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "There is one green square. '0' suggests no squares are present, which is incorrect. '2' and '3' overestimate the number of squares.",
+    "type": "single"
+  },
+  {
+    "Question": "How many blue shapes are there?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"blue\" />\n  <rect x=\"90\" y=\"20\" width=\"40\" height=\"40\" fill=\"red\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "There is one blue circle. '0' suggests no blue shapes are present, which is incorrect. '2' and '3' overestimate the number of blue shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the red shapes:<br><br><svg width=\"150\" height=\"150\">\n  <rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"red\" />\n  <circle cx=\"100\" cy=\"50\" r=\"30\" fill=\"red\" />\n</svg>",
+    "Options": ["1", "2", "3", "4"],
+    "answer": "2",
+    "Rationale": "There are two red shapes: a square and a circle. '1' underestimates the number of red shapes. '3' and '4' overestimate the number of red shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "How many yellow shapes are there?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"yellow\" />\n  <rect x=\"90\" y=\"20\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "There is one yellow circle. '0' suggests no yellow shapes are present, which is incorrect. '2' and '3' overestimate the number of yellow shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the green shapes:<br><br><svg width=\"150\" height=\"150\">\n  <rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n  <circle cx=\"100\" cy=\"50\" r=\"30\" fill=\"green\" />\n  <polygon points=\"20,100 75,10 130,100\" fill=\"green\" />\n</svg>",
+    "Options": ["1", "2", "3", "4"],
+    "answer": "3",
+    "Rationale": "There are three green shapes: a square, a circle, and a triangle. '1' and '2' underestimate the number of green shapes. '4' overestimates the number of green shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "How many shapes are there in total?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"yellow\" />\n  <rect x=\"70\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n  <polygon points=\"20,100 75,10 130,100\" fill=\"orange\" />\n</svg>",
+    "Options": ["1", "2", "3", "4"],
+    "answer": "3",
+    "Rationale": "There are three shapes in total: a circle, a square, and a triangle. '1' and '2' underestimate the total number of shapes. '4' overestimates the total number of shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "Which has more sides?<br><br><svg width=\"150\" height=\"75\">\n  <rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg><br><svg width=\"150\" height=\"75\">\n  <polygon points=\"20,20 75,10 130,20\" fill=\"orange\" />\n</svg>",
+    "Options": ["Square", "Triangle", "Same", "Neither"],
+    "answer": "Square",
+    "Rationale": "A square has 4 sides, and a triangle has 3 sides. Therefore, the square has more sides. The triangle does not have more sides. They do not have the same number of sides. Both shapes exist.",
+    "type": "single"
+  },
+  {
+    "Question": "True or False: There are more circles than squares.<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"yellow\" />\n  <rect x=\"70\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg>",
+    "Options": ["True", "False"],
+    "answer": "False",
+    "Rationale": "There is one circle and one square. Since 1 is equal to 1, the statement that there are *more* circles than squares is false.",
+    "type": "single"
+  },
+  {
+    "Question": "How many shapes are not red?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"red\" />\n  <rect x=\"70\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "There is one shape that is not red (the green square). '0' suggests all shapes are red, which is incorrect. '2' and '3' overestimate the number of non-red shapes.",
+    "type": "single"
+  },
+  {
+    "Question": "Count the shapes with corners:<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"red\" />\n  <rect x=\"70\" y=\"10\" width=\"40\" height=\"40\" fill=\"green\" />\n</svg>",
+    "Options": ["0", "1", "2", "3"],
+    "answer": "1",
+    "Rationale": "There is one shape with corners (the green square). '0' suggests no shapes have corners, which is incorrect. '2' and '3' overestimate the number of shapes with corners.",
+    "type": "single"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "Question": "Which of the following sentences uses the correct punctuation?",
+    "Options": [
+      "My dog loves to play fetch, run and bark.",
+      "My dog loves to play fetch run and bark!",
+      "My dog loves to play fetch, run, and bark.",
+      "My dog loves to play fetch; run and bark."
+    ],
+    "answer": "My dog loves to play fetch, run, and bark.",
+    "Rationale": "This sentence correctly uses commas to separate items in a list, and includes the Oxford comma (the comma before 'and'). This makes the sentence clear and grammatically correct.",
+    "type": "single"
+  }
+]

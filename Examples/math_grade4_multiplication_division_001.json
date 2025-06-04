@@ -1,0 +1,170 @@
+[
+{
+"Question": "What is 12 x 8?",
+"Options": ["96", "84", "108", "88"],
+"answer": "96",
+"Rationale": "12 times 8 equals 96.",
+"type": "single"
+},
+{
+"Question": "Solve: 144 ÷ 12 = ___",
+"Options": ["10", "12", "14", "16"],
+"answer": "12",
+"Rationale": "144 divided by 12 equals 12.",
+"type": "single"
+},
+{
+"Question": "Which of the following are multiples of 6?",
+"Options": ["12", "18", "20", "30"],
+"answer": ["12","18","30"],
+"Rationale": "12, 18, and 30 are multiples of 6.",
+"type": "multi-select"
+},
+{
+"Question": "Fill in the blank: 7 x ___ = 56",
+"Options": null,
+"answer": "8",
+"Rationale": "7 times 8 equals 56.",
+"type": "fill-in"
+},
+{
+"Question": "Order these products from least to greatest: 7x3, 4x5, 6x2",
+"Options": ["21", "20", "12"],
+"answer": ["12", "20", "21"],
+"Rationale": "12 < 20 < 21.",
+"type": "ordering"
+},
+{
+"Question": "True or False: 9 x 9 = 81",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "9 times 9 equals 81.",
+"type": "single"
+},
+{
+"Question": "What is the missing number? 72 ÷ ___ = 9",
+"Options": ["6", "8", "9", "12"],
+"answer": "8",
+"Rationale": "72 divided by 8 equals 9.",
+"type": "single"
+},
+{
+"Question": "Which of these are factors of 36?",
+"Options": ["3", "4", "5", "6"],
+"answer": ["3","4","6"],
+"Rationale": "3, 4, and 6 are factors of 36.",
+"type": "multi-select"
+},
+{
+"Question": "Fill in the blank: 5 x 7 = ___",
+"Options": null,
+"answer": "35",
+"Rationale": "5 times 7 equals 35.",
+"type": "fill-in"
+},
+{
+"Question": "Order these quotients from greatest to least: 100÷5, 72÷8, 81÷9",
+"Options": ["20", "9", "8"],
+"answer": ["20", "9", "8"],
+"Rationale": "20 > 9 > 8.",
+"type": "ordering"
+},
+{
+"Question": "True or False: 6 x 7 = 42",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "6 times 7 equals 42.",
+"type": "single"
+},
+{
+"Question": "What is 11 x 11?",
+"Options": ["121", "111", "101", "131"],
+"answer": "121",
+"Rationale": "11 times 11 equals 121.",
+"type": "single"
+},
+{
+"Question": "Solve: 63 ÷ 7",
+"Options": ["9", "8", "7", "6"],
+"answer": "9",
+"Rationale": "63 divided by 7 equals 9.",
+"type": "single"
+},
+{
+"Question": "Which of these are divisible by 4?",
+"Options": ["16", "22", "36", "45"],
+"answer": ["16","36"],
+"Rationale": "16 and 36 are divisible by 4.",
+"type": "multi-select"
+},
+{
+"Question": "Fill in the blank: ___ x 9 = 81",
+"Options": null,
+"answer": "9",
+"Rationale": "9 times 9 equals 81.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 3x12, 5x5, 2x20",
+"Options": ["36", "25", "40"],
+"answer": ["25", "36", "40"],
+"Rationale": "25 < 36 < 40.",
+"type": "ordering"
+},
+{
+"Question": "True or False: 100 ÷ 10 = 10",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "100 divided by 10 equals 10.",
+"type": "single"
+},
+{
+"Question": "What is 15 x 3?",
+"Options": ["45", "35", "40", "50"],
+"answer": "45",
+"Rationale": "15 times 3 equals 45.",
+"type": "single"
+},
+{
+"Question": "Solve: 81 ÷ 9",
+"Options": ["8", "9", "7", "6"],
+"answer": "9",
+"Rationale": "81 divided by 9 equals 9.",
+"type": "single"
+},
+{
+"Question": "Which of these are multiples of 5?",
+"Options": ["10", "12", "15", "22"],
+"answer": ["10","15"],
+"Rationale": "10 and 15 are multiples of 5.",
+"type": "multi-select"
+},
+{
+"Question": "Fill in the blank: 6 x ___ = 54",
+"Options": null,
+"answer": "9",
+"Rationale": "6 times 9 equals 54.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 9x4, 3x10, 5x5",
+"Options": ["36", "30", "25"],
+"answer": ["36", "30", "25"],
+"Rationale": "36 > 30 > 25.",
+"type": "ordering"
+},
+{
+"Question": "True or False: 7 x 7 = 48",
+"Options": ["True", "False"],
+"answer": "False",
+"Rationale": "7 times 7 equals 49, not 48.",
+"type": "single"
+},
+{
+"Question": "What is 13 x 4?",
+"Options": ["52", "48", "56", "44"],
+"answer": "52",
+"Rationale": "13 times 4 equals 52.",
+"type": "single"
+}
+]

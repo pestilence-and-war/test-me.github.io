@@ -1,0 +1,93 @@
+[
+  {
+    "Question": "What is the main function of the skeletal system?",
+    "Options": [
+      "To pump blood throughout the body",
+      "To break down food for energy",
+      "To support the body and protect organs",
+      "To help the body breathe"
+    ],
+    "answer": "To support the body and protect organs",
+    "Rationale": "The skeletal system provides structure and support, allowing us to stand and move. Pumping blood is the function of the circulatory system. Breaking down food is the digestive system's job. Breathing is the function of the respiratory system.",
+    "type": "single"
+  },
+  {
+    "Question": "Which of the following is a vertebrate?",
+    "Options": [
+      "Butterfly",
+      "Earthworm",
+      "Snake",
+      "Spider"
+    ],
+    "answer": "Snake",
+    "Rationale": "Vertebrates have a backbone, and snakes are reptiles with a spinal column. Butterflies are insects, earthworms are invertebrates, and spiders are arachnids, none of which have backbones.",
+    "type": "single"
+  },
+  {
+    "Question": "True or False: A solid changes to a liquid during evaporation.",
+    "Options": ["True", "False"],
+    "answer": "False",
+    "Rationale": "Evaporation is the process of a liquid changing to a gas, not a solid to a liquid.",
+    "type": "single"
+  },
+  {
+    "Question": "What is the process called when plants release water vapor into the air through their leaves?",
+    "Options": [
+      "Photosynthesis",
+      "Respiration",
+      "Transpiration",
+      "Pollination"
+    ],
+    "answer": "Transpiration",
+    "Rationale": "Transpiration is the process of water movement through a plant and its evaporation from aerial parts, such as leaves. Photosynthesis is how plants make food. Respiration is how plants use energy. Pollination is how plants reproduce.",
+    "type": "single"
+  },
+  {
+    "Question": "Which of these is a renewable resource?",
+    "Options": [
+      "Coal",
+      "Oil",
+      "Solar energy",
+      "Natural gas"
+    ],
+    "answer": "Solar energy",
+    "Rationale": "Renewable resources can be replenished naturally, and the sun constantly provides solar energy. Coal, oil, and natural gas are fossil fuels, which take millions of years to form and are therefore non-renewable.",
+    "type": "single"
+  },
+  {
+    "Question": "What tool would a scientist use to observe very small objects, like cells?",
+    "Options": [
+      "Telescope",
+      "Microscope",
+      "Thermometer",
+      "Ruler"
+    ],
+    "answer": "Microscope",
+    "Rationale": "A microscope is designed to magnify small objects, making them visible. A telescope is for viewing distant objects. A thermometer measures temperature. A ruler measures length.",
+    "type": "single"
+  },
+  {
+    "Question": "Fill in the blank: The force that pulls objects towards the Earth is called ________.",
+    "Options": [
+      "Magnetism",
+      "Friction",
+      "Gravity",
+      "Electricity"
+    ],
+    "answer": "Gravity",
+    "Rationale": "Gravity is the force of attraction between objects with mass, and it's what keeps us on the ground. Magnetism is a force related to magnets. Friction opposes motion. Electricity is a form of energy.",
+    "type": "single"
+  },
+  {
+    "Question": "What is the function of the lungs?",
+    "Options": [
+      "To digest food",
+      "To pump blood",
+      "To exchange oxygen and carbon dioxide",
+      "To filter waste from the blood"
+    ],
+    "answer": "To exchange oxygen and carbon dioxide",
+    "Rationale": "The lungs take in oxygen and release carbon dioxide, which is essential for respiration. Digestion happens in the stomach and intestines. The heart pumps blood. The kidneys filter waste.",
+    "type": "single"
+  }
+]

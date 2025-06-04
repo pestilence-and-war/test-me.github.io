@@ -1,0 +1,184 @@
+[
+    {
+      "Question": "How many circles are there?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"75\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+      "Options": ["1", "2", "3", "4"],
+      "answer": "3",
+      "Rationale": "'1' and '2' underestimate the number of circles. '4' is an overcount. There are three red circles.",
+      "type": "single"
+    },
+    {
+      "Question": "How many squares are green?<br><br><svg width=\"150\" height=\"150\">\n  <rect x=\"25\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+      "Options": ["0", "1", "2", "3"],
+      "answer": "2",
+      "Rationale": "'0' suggests no green squares are present, which is incorrect. '1' underestimates the number of green squares. '3' is an overcount. There are two green squares.",
+      "type": "single"
+    },
+    {
+      "Question": "How many triangles are there?<br><br><svg width=\"150\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n</svg>",
+      "Options": ["0", "1", "2", "3"],
+      "answer": "1",
+      "Rationale": "'0' suggests no triangles are present, which is incorrect. '2' and '3' are overcounts. There is one yellow triangle.",
+      "type": "single"
+    },
+    {
+      "Question": "How many shapes are blue?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+      "Options": ["0", "1", "2", "3"],
+      "answer": "2",
+      "Rationale": "'0' suggests no blue shapes are present, which is incorrect. '1' underestimates the number of blue shapes. '3' is an overcount. There are two blue shapes.",
+      "type": "single"
+    },
+    {
+      "Question": "How many red shapes are there?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n</svg>",
+      "Options": ["1", "2", "3", "4"],
+      "answer": "3",
+      "Rationale": "'1' and '2' underestimate the number of red shapes. '4' is an overcount. There are three red shapes.",
+      "type": "single"
+    },
+    {
+      "Question": "How many yellow shapes are there?<br><br><svg width=\"150\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"yellow\" />\n</svg>",
+      "Options": ["1", "2", "3", "0"],
+      "answer": "2",
+      "Rationale": "'0' suggests no yellow shapes are present, which is incorrect. '1' underestimates the number of yellow shapes. '3' is an overcount. There are two yellow shapes.",
+      "type": "single"
+    },
+    {
+      "Question": "How many shapes are there in total?<br><br><svg width=\"150\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:green;stroke:purple;stroke-width:3\" />\n</svg>",
+      "Options": ["1", "2", "3", "4"],
+      "answer": "3",
+      "Rationale": "'1' and '2' underestimate the number of shapes. '4' is an overcount. There are three shapes in total.",
+      "type": "single"
+    },
+    {
+        "Question": "How many circles are there?<br><br><svg width=\"300\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"75\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"175\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+        "Options": ["1", "2", "3", "4"],
+        "answer": "4",
+        "Rationale": "'1', '2', and '3' underestimate the number of circles. There are four red circles.",
+        "type": "single"
+      },
+      {
+        "Question": "How many squares are green?<br><br><svg width=\"300\" height=\"150\">\n  <rect x=\"25\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"125\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"225\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+        "Options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "Rationale": "'3', '4', and '6' either underestimate or overestimate the number of green squares. There are five green squares.",
+        "type": "single"
+      },
+      {
+        "Question": "How many triangles are there?<br><br><svg width=\"300\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"150 10, 110 90, 190 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"250 10, 210 90, 290 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["1", "2", "3", "4"],
+        "answer": "3",
+        "Rationale": "'1' and '2' underestimate the number of triangles. '4' is an overcount. There are three yellow triangles.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes are blue?<br><br><svg width=\"300\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <circle cx=\"125\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n</svg>",
+        "Options": ["1", "2", "3", "4"],
+        "answer": "3",
+        "Rationale": "'1' and '2' underestimate the number of blue shapes. '4' is an overcount. There are three blue shapes.",
+        "type": "single"
+      },
+      {
+        "Question": "How many red shapes are there?<br><br><svg width=\"300\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+        "Options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "Rationale": "'2' and '3' underestimate the number of red shapes. '5' is an overcount. There are four red shapes.",
+        "type": "single"
+      },
+      {
+        "Question": "How many yellow shapes are there?<br><br><svg width=\"300\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"yellow\" />\n  <polygon points=\"150 10, 110 90, 190 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["1", "2", "3", "0"],
+        "answer": "3",
+        "Rationale": "'0', '1', and '2' underestimate the number of yellow shapes. There are three yellow shapes.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes are there in total?<br><br><svg width=\"300\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:green;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+        "Options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "Rationale": "'2' and '3' underestimate the number of shapes. '5' is an overcount. There are four shapes in total.",
+        "type": "single"
+      },
+      {
+        "Question": "How many circles are there?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"75\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"175\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"225\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"275\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+        "Options": ["4", "5", "6", "7"],
+        "answer": "6",
+        "Rationale": "'4' and '5' underestimate the number of circles. '7' is an overcount. There are six red circles.",
+        "type": "single"
+      },
+      {
+        "Question": "How many squares are green?<br><br><svg width=\"400\" height=\"150\">\n  <rect x=\"25\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"125\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"225\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"275\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"325\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+        "Options": ["5", "6", "7", "8"],
+        "answer": "7",
+        "Rationale": "'5' and '6' underestimate the number of green squares. '8' is an overcount. There are seven green squares.",
+        "type": "single"
+      },
+      {
+        "Question": "How many triangles are there?<br><br><svg width=\"400\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"150 10, 110 90, 190 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"250 10, 210 90, 290 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"350 10, 310 90, 390 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "Rationale": "'2' and '3' underestimate the number of triangles. '5' is an overcount. There are four yellow triangles.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes are blue?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <circle cx=\"125\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <circle cx=\"225\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n</svg>",
+        "Options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "Rationale": "'3' and '4' underestimate the number of blue shapes. '6' is an overcount. There are five blue shapes.",
+        "type": "single"
+      },
+      {
+        "Question": "How many red shapes are there?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"150 70, 110 130, 190 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["4", "5", "6", "7"],
+        "answer": "6",
+        "Rationale": "'4' and '5' underestimate the number of red shapes. '7' is an overcount. There are six red shapes.",
+        "type": "single"
+      },
+      {
+        "Question": "How many circles are there?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"75\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"175\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"225\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <circle cx=\"275\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n</svg>",
+        "Options": ["4", "5", "6", "7"],
+        "answer": "6",
+        "Rationale": "The options '4' and '5' underestimate the number of circles. The option '7' is an overcount. There are six red circles in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many squares are green?<br><br><svg width=\"400\" height=\"150\">\n  <rect x=\"25\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"125\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"225\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"275\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n  <rect x=\"325\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)\" />\n</svg>",
+        "Options": ["5", "6", "7", "8"],
+        "answer": "7",
+        "Rationale": "The options '5' and '6' underestimate the number of green squares. The option '8' is an overcount. There are seven green squares in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many triangles are there?<br><br><svg width=\"400\" height=\"150\">\n  <polygon points=\"50 10, 10 90, 90 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"150 10, 110 90, 190 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"250 10, 210 90, 290 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n  <polygon points=\"350 10, 310 90, 390 90\" style=\"fill:yellow;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["2", "3", "4", "5"],
+        "answer": "4",
+        "Rationale": "The options '2' and '3' underestimate the number of triangles. The option '5' is an overcount. There are four yellow triangles in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes are blue?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"50\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <circle cx=\"125\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:blue;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <circle cx=\"225\" cy=\"50\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"blue\" />\n</svg>",
+        "Options": ["3", "4", "5", "6"],
+        "answer": "5",
+        "Rationale": "The options '3' and '4' underestimate the number of blue shapes. The option '6' is an overcount. There are five blue shapes in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many red shapes are there?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"150 70, 110 130, 190 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["4", "5", "6", "7"],
+        "answer": "6",
+        "Rationale": "The options '4' and '5' underestimate the number of red shapes. The option '7' is an overcount. There are six red shapes in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes are there in total?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"150 70, 110 130, 190 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["4", "5", "6", "7"],
+        "answer": "6",
+        "Rationale": "The options '4' and '5' underestimate the total number of shapes. The option '7' is an overcount. There are six shapes in the image.",
+        "type": "single"
+      },
+      {
+        "Question": "How many shapes have 3 sides?<br><br><svg width=\"400\" height=\"150\">\n  <circle cx=\"25\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"75\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"50 70, 10 130, 90 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n  <circle cx=\"125\" cy=\"25\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"red\" />\n  <rect x=\"175\" y=\"25\" width=\"20\" height=\"20\" style=\"fill:red;stroke-width:3;stroke:rgb(0,0,0)\" />\n  <polygon points=\"150 70, 110 130, 190 130\" style=\"fill:red;stroke:purple;stroke-width:3\" />\n</svg>",
+        "Options": ["1", "2", "3", "4"],
+        "answer": "2",
+        "Rationale": "The options '1' underestimates the number of triangles. The options '3' and '4' are overcounts. There are two triangles in the image.",
+        "type": "single"
+      }
+  ]

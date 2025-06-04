@@ -1,0 +1,170 @@
+[
+{
+"Question": "How many inches are in 2 feet?",
+"Options": ["12", "18", "24", "36"],
+"answer": "24",
+"Rationale": "2 feet x 12 inches per foot = 24 inches.",
+"type": "single"
+},
+{
+"Question": "True or False: There are 100 centimeters in a meter.",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "1 meter = 100 centimeters.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 1 kilogram = ___ grams",
+"Options": null,
+"answer": "1000",
+"Rationale": "1 kilogram equals 1000 grams.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 1 cup, 1 pint, 1 quart",
+"Options": ["1 cup", "1 pint", "1 quart"],
+"answer": ["1 cup", "1 pint", "1 quart"],
+"Rationale": "1 cup < 1 pint < 1 quart.",
+"type": "ordering"
+},
+{
+"Question": "Which units measure length?",
+"Options": ["Inches", "Pounds", "Meters", "Liters"],
+"answer": ["Inches","Meters"],
+"Rationale": "Inches and meters measure length.",
+"type": "multi-select"
+},
+{
+"Question": "How many minutes are in 3 hours?",
+"Options": ["120", "150", "180", "200"],
+"answer": "180",
+"Rationale": "3 hours x 60 minutes = 180 minutes.",
+"type": "single"
+},
+{
+"Question": "True or False: A liter is a unit of mass.",
+"Options": ["True", "False"],
+"answer": "False",
+"Rationale": "A liter measures volume.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 60 seconds = ___ minute",
+"Options": null,
+"answer": "1",
+"Rationale": "60 seconds equal 1 minute.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 1 gallon, 1 quart, 1 cup",
+"Options": ["1 gallon", "1 quart", "1 cup"],
+"answer": ["1 gallon", "1 quart", "1 cup"],
+"Rationale": "1 gallon > 1 quart > 1 cup.",
+"type": "ordering"
+},
+{
+"Question": "Which units measure weight or mass?",
+"Options": ["Grams", "Liters", "Kilograms", "Meters"],
+"answer": ["Grams","Kilograms"],
+"Rationale": "Grams and kilograms measure mass.",
+"type": "multi-select"
+},
+{
+"Question": "How many days are in 4 weeks?",
+"Options": ["28", "30", "31", "35"],
+"answer": "28",
+"Rationale": "4 weeks x 7 days = 28 days.",
+"type": "single"
+},
+{
+"Question": "True or False: There are 1000 milliliters in a liter.",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "1 liter = 1000 milliliters.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 1 mile = ___ feet",
+"Options": null,
+"answer": "5280",
+"Rationale": "1 mile equals 5280 feet.",
+"type": "fill-in"
+},
+{
+"Question": "Order from least to greatest: 1 ounce, 1 pound, 1 ton",
+"Options": ["1 ounce", "1 pound", "1 ton"],
+"answer": ["1 ounce", "1 pound", "1 ton"],
+"Rationale": "1 ounce < 1 pound < 1 ton.",
+"type": "ordering"
+},
+{
+"Question": "Which graphs show data?",
+"Options": ["Bar graph", "Pie chart", "Line plot"],
+"answer": ["Bar graph", "Pie chart", "Line plot"],
+"Rationale": "All these graphs show data.",
+"type": "multi-select"
+},
+{
+"Question": "How many hours are in a day?",
+"Options": ["12", "24", "36", "48"],
+"answer": "24",
+"Rationale": "There are 24 hours in a day.",
+"type": "single"
+},
+{
+"Question": "True or False: Perimeter is the distance around a shape.",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "Perimeter measures the boundary length.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: Area of a rectangle = length x ___",
+"Options": null,
+"answer": "width",
+"Rationale": "Area = length x width.",
+"type": "fill-in"
+},
+{
+"Question": "Order from greatest to least: 100 cm, 1 m, 50 cm",
+"Options": ["100 cm", "1 m", "50 cm"],
+"answer": ["1 m", "100 cm", "50 cm"],
+"Rationale": "1 m = 100 cm > 50 cm.",
+"type": "ordering"
+},
+{
+"Question": "Which tools measure length?",
+"Options": ["Ruler", "Thermometer", "Tape measure", "Scale"],
+"answer": ["Ruler","Tape measure"],
+"Rationale": "Rulers and tape measures measure length.",
+"type": "multi-select"
+},
+{
+"Question": "How many quarts are in a gallon?",
+"Options": ["2", "3", "4", "5"],
+"answer": "4",
+"Rationale": "1 gallon = 4 quarts.",
+"type": "single"
+},
+{
+"Question": "True or False: A bar graph can compare categories.",
+"Options": ["True", "False"],
+"answer": "True",
+"Rationale": "Bar graphs compare categories.",
+"type": "single"
+},
+{
+"Question": "Fill in the blank: 30 minutes = ___ hour",
+"Options": null,
+"answer": "0.5",
+"Rationale": "30 minutes is half an hour.",
+"type": "fill-in"
+},
+{
+"Question": "Which units measure capacity?",
+"Options": ["Liters", "Milliliters", "Gallons"],
+"answer": ["Liters", "Milliliters", "Gallons"],
+"Rationale": "All measure capacity.",
+"type": "multi-select"
+}
+]
