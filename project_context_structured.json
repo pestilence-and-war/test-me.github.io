@@ -1,0 +1,807 @@
+{
+  "__metadata__": {
+    "root_directory": "C:\\Users\\mwari\\documents\\local_chat\\quiz_me\\test-me.github.io",
+    "generated_time": "2025-06-28T22:56:04.019603",
+    "description": "Structured code context for LLM interaction and project diffing/recreation."
+  },
+  "files": {
+    "index.html": {
+      "path": "index.html",
+      "type": "html_skipped",
+      "message": "HTML parsing skipped: libraries missing.",
+      "full_content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Quiz Me</title>\n    <!-- Link to external CSS files -->\n    <link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap\"\n        rel=\"stylesheet\">\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">\n    <link rel=\"stylesheet\" href=\"css/style.css\">\n</head>\n\n<body>\n    <div class=\"container\">\n        <!-- Header Section -->\n        <header id=\"header\">\n            <h1 id=\"main-title\">Quiz Me</h1>\n            <p id=\"main-subtitle\" class=\"subtitle\">What have you mastered today?</p>\n            <!-- Gamification Panel -->\n            <div class=\"gamification-panel\">\n                <div class=\"stars-container\">\n                    <i class=\"fas fa-star\"></i>\n                    <span id=\"star-count\">0</span>\n                </div>\n                <div class=\"progress-container\">\n                    <div id=\"progress-bar\" class=\"progress-bar\"></div>\n                </div>\n                <div id=\"badge-container\" class=\"badge-container\"></div>\n            </div>\n        </header>\n\n        <!-- Settings Section -->\n        <div class=\"settings-panel\">\n            <h2>Test Settings</h2>\n\n            <div class=\"filter-section\">\n                <div class=\"filter-group\">\n                    <label for=\"subject-filter\"><i class=\"fas fa-book\"></i> Subject:</label>\n                    <select id=\"subject-filter\">\n                        <option value=\"all\">All Subjects</option>\n                    </select>\n                </div>\n                <div class=\"filter-group\">\n                    <label for=\"grade-filter\"><i class=\"fas fa-graduation-cap\"></i> Grade Level:</label>\n                    <select id=\"grade-filter\">\n                        <option value=\"all\">All Levels</option>\n                    </select>\n                </div>\n            </div>\n\n            <div class=\"filter-group identifier-filter\">\n                <label for=\"identifier-filter\"><i class=\"fas fa-tags\"></i> Question Set:</label>\n                <select id=\"identifier-filter\">\n                    <option value=\"all\">All Question Sets</option>\n                </select>\n            </div>\n\n            <div class=\"filter-group\">\n                <label for=\"test-length\"><i class=\"fas fa-ruler\"></i> Test Length:</label>\n                <select id=\"test-length\">\n                    <option value=\"1\">Single Question</option>\n                    <option value=\"5\">Short (5 questions)</option>\n                    <option value=\"10\" selected>Medium (10 questions)</option>\n                    <option value=\"25\">Long (25 questions)</option>\n                </select>\n            </div>\n\n            <div class=\"question-stats\" id=\"question-stats\">No questions loaded. Add question files to begin.</div>\n\n            <button id=\"start-test\" class=\"pulse\">\n                <i class=\"fas fa-play\"></i> Start Test\n            </button>\n\n            <div class=\"file-upload\" id=\"file-upload\">\n                <p><i class=\"fas fa-cloud-upload-alt fa-2x\"></i></p>\n                <p>Drag and drop question files here (.json)</p>\n                <p>or</p>\n                <button id=\"browse-files\"><i class=\"fas fa-folder-open\"></i> Browse Files</button>\n                <input type=\"file\" id=\"file-input\" accept=\".json\" multiple style=\"display: none;\">\n            </div>\n\n            <div class=\"danger-zone\">\n                <button id=\"reset-badges\" class=\"danger-btn\">\n                    <i class=\"fas fa-sync-alt\"></i> Reset Badge Progress\n                </button>\n                <p class=\"warning-text\">This will reset your star count and remove all earned badges.</p>\n\n                <button id=\"delete-questions\" class=\"danger-btn\">\n                    <i class=\"fas fa-trash-alt\"></i> Delete All Questions\n                </button>\n                <p class=\"warning-text\">This will permanently remove all loaded questions.</p>\n            </div>\n        </div>\n\n        <!-- Test Section -->\n        <div class=\"test-container\">\n            <!-- Test Progress Indicator -->\n            <div class=\"progress\">\n                <i class=\"fas fa-tasks\"></i>\n                Question <span id=\"current-question\">1</span> of <span id=\"total-questions\">?</span>\n            </div>\n\n            <div class=\"question-area\">\n                <div class=\"question\" id=\"question-text\"></div>\n                <!-- Hint icon element - initially hidden, hint text in data-hint -->\n                <div class=\"hint-icon\" id=\"hint-icon\" data-hint=\"\">\n                    <i class=\"fas fa-info-circle\"></i>\n                </div>\n            </div>\n\n            <p id=\"ordering-instructions\" class=\"instructions\">Drag and drop the items to put them in the correct\n                order.</p>\n\n            <div class=\"options\" id=\"options-container\"></div>\n            <div class=\"navigation\">\n                <button id=\"prev-question\" disabled>\n                    <i class=\"fas fa-arrow-left\"></i> Previous\n                </button>\n                <button id=\"submit-answer\">\n                    <i class=\"fas fa-check\"></i> Submit Answer\n                </button>\n                <button id=\"next-question\" disabled>\n                    Next <i class=\"fas fa-arrow-right\"></i>\n                </button>\n            </div>\n        </div>\n\n        <!-- Results Section -->\n        <div class=\"results\">\n            <h2>Test Completed!</h2>\n            <div class=\"score\">Your Score: <span id=\"final-score\">0</span>%</div>\n            <div class=\"feedback\" id=\"feedback-container\"></div>\n            <button id=\"new-test\">\n                <i class=\"fas fa-redo\"></i> Start New Test\n            </button>\n        </div>\n    </div>\n\n    <!-- Link to external JavaScript files -->\n    <!-- Order matters: dependencies should be loaded first -->\n    <script src=\"js/utils.js\"></script>\n    <script src=\"js/dataManager.js\"></script>\n    <script src=\"js/testManager.js\"></script>\n    <script src=\"js/gamification.js\"></script>\n    <script src=\"js/uiRenderer.js\"></script>\n    <script src=\"js/fileHandler.js\"></script>\n    <script src=\"js/eventHandlers.js\"></script>\n    <script src=\"js/app.js\"></script>\n</body>\n\n</html>\n",
+      "start_lineno": 1,
+      "end_lineno": 153
+    },
+    "css/style.css": {
+      "path": "css/style.css",
+      "type": "css",
+      "rules": [
+        {
+          "selectors": [
+            ":root"
+          ],
+          "source_code": ":root {\n    --primary: #4361ee;\n    --primary-light: #4cc9f0;\n    --secondary: #3a0ca3;\n    --accent: #f72585;\n    --background: #f8f9fa;\n    --card-bg: #ffffff;\n    --text: #2b2d42;\n    --text-light: #8d99ae;\n    --correct: #4cc9f0;\n    --incorrect: #f72585;\n    --warning: #ff9e00;\n    --danger: #ef233c;\n    --success: #38b000;\n    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);\n    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}",
+          "start_lineno": 1,
+          "end_lineno": 17
+        },
+        {
+          "selectors": [
+            "body"
+          ],
+          "source_code": "body {\n    font-family: 'Poppins', sans-serif;\n    line-height: 1.6;\n    color: var(--text);\n    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);\n    margin: 0;\n    padding: 10px;\n    min-height: 100vh;\n}",
+          "start_lineno": 19,
+          "end_lineno": 27
+        },
+        {
+          "selectors": [
+            ".container"
+          ],
+          "source_code": ".container {\n    max-width: 1000px;\n    margin: 0 auto;\n}",
+          "start_lineno": 29,
+          "end_lineno": 32
+        },
+        {
+          "selectors": [
+            "header"
+          ],
+          "source_code": "header {\n    text-align: center;\n    margin-bottom: 20px;\n    padding: 20px;\n    background: var(--card-bg);\n    border-radius: 12px;\n    box-shadow: var(--card-shadow);\n    position: relative;\n    overflow: hidden;\n}",
+          "start_lineno": 34,
+          "end_lineno": 43
+        },
+        {
+          "selectors": [
+            "header::after"
+          ],
+          "source_code": "header::after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 4px;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n}",
+          "start_lineno": 45,
+          "end_lineno": 53
+        },
+        {
+          "selectors": [
+            "h1"
+          ],
+          "source_code": "h1 {\n    color: var(--secondary);\n    margin-bottom: 10px;\n    font-size: 2.5rem;\n    font-weight: 700;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    -webkit-background-clip: text;\n    background-clip: text;\n    -webkit-text-fill-color: transparent;\n    color: transparent;\n}",
+          "start_lineno": 55,
+          "end_lineno": 65
+        },
+        {
+          "selectors": [
+            ".subtitle"
+          ],
+          "source_code": ".subtitle {\n    color: var(--text-light);\n    font-size: 1.1rem;\n    margin-bottom: 20px;\n}",
+          "start_lineno": 67,
+          "end_lineno": 71
+        },
+        {
+          "selectors": [
+            ".gamification-panel"
+          ],
+          "source_code": ".gamification-panel {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    margin-top: 10px;\n    padding: 10px 20px;\n    background: rgba(255, 255, 255, 0.7);\n    border-radius: 10px;\n    backdrop-filter: blur(5px);\n    flex-wrap: wrap;\n}",
+          "start_lineno": 73,
+          "end_lineno": 84
+        },
+        {
+          "selectors": [
+            ".stars-container"
+          ],
+          "source_code": ".stars-container {\n    color: var(--warning);\n    font-size: 1.2rem;\n    margin-top: 0;\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    flex-shrink: 0;\n}",
+          "start_lineno": 86,
+          "end_lineno": 94
+        },
+        {
+          "selectors": [
+            ".badge-container"
+          ],
+          "source_code": ".badge-container {\n    margin-top: 0;\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    flex-shrink: 0;\n}",
+          "start_lineno": 96,
+          "end_lineno": 102
+        },
+        {
+          "selectors": [
+            ".progress-container"
+          ],
+          "source_code": ".progress-container {\n    flex-grow: 1;\n    margin: 0 15px;\n    height: 8px;\n    background: #e9ecef;\n    border-radius: 4px;\n    overflow: hidden;\n    min-width: 100px;\n}",
+          "start_lineno": 104,
+          "end_lineno": 112
+        },
+        {
+          "selectors": [
+            ".progress-bar"
+          ],
+          "source_code": ".progress-bar {\n    height: 100%;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    width: 0%;\n    transition: width 0.5s ease;\n}",
+          "start_lineno": 114,
+          "end_lineno": 119
+        },
+        {
+          "selectors": [
+            "@media (max-width: 600px)"
+          ],
+          "source_code": "@media (max-width: 600px) {\n    .gamification-panel {\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n    }",
+          "start_lineno": 121,
+          "end_lineno": 126
+        },
+        {
+          "selectors": [
+            ".progress-container"
+          ],
+          "source_code": ".progress-container {\n        width: 100%;\n        margin: 10px 0 0 0;\n    }",
+          "start_lineno": 128,
+          "end_lineno": 131
+        },
+        {
+          "selectors": [
+            ".stars-container",
+            ".badge-container"
+          ],
+          "source_code": ".stars-container,\n    .badge-container {\n        width: 100%;\n        justify-content: center;\n    }",
+          "start_lineno": 133,
+          "end_lineno": 137
+        },
+        {
+          "selectors": [
+            ".settings-panel",
+            ".test-container",
+            ".results"
+          ],
+          "source_code": ".settings-panel,\n.test-container,\n.results {\n    background: var(--card-bg);\n    padding: 20px;\n    border-radius: 15px;\n    box-shadow: var(--card-shadow);\n    margin-bottom: 20px;\n    transition: var(--transition);\n}",
+          "start_lineno": 138,
+          "end_lineno": 147
+        },
+        {
+          "selectors": [
+            "h2"
+          ],
+          "source_code": "h2 {\n    color: var(--secondary);\n    margin-top: 0;\n    margin-bottom: 15px;\n    font-size: 1.8rem;\n    position: relative;\n    padding-bottom: 10px;\n}",
+          "start_lineno": 151,
+          "end_lineno": 158
+        },
+        {
+          "selectors": [
+            "h2::after"
+          ],
+          "source_code": "h2::after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 50px;\n    height: 3px;\n    background: var(--accent);\n}",
+          "start_lineno": 160,
+          "end_lineno": 168
+        },
+        {
+          "selectors": [
+            ".filter-section"
+          ],
+          "source_code": ".filter-section {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n    margin-bottom: 10px;\n}",
+          "start_lineno": 170,
+          "end_lineno": 175
+        },
+        {
+          "selectors": [
+            ".filter-group"
+          ],
+          "source_code": ".filter-group {\n    display: flex;\n    flex-direction: column;\n}",
+          "start_lineno": 177,
+          "end_lineno": 180
+        },
+        {
+          "selectors": [
+            "label"
+          ],
+          "source_code": "label {\n    font-weight: 500;\n    margin-bottom: 5px;\n    color: var(--text);\n}",
+          "start_lineno": 182,
+          "end_lineno": 186
+        },
+        {
+          "selectors": [
+            "select",
+            "input[type=\"text\"]",
+            "input[type=\"number\"]"
+          ],
+          "source_code": "select,\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    padding: 8px 12px;\n    border: 2px solid #e9ecef;\n    border-radius: 8px;\n    font-family: 'Poppins', sans-serif;\n    background-color: var(--card-bg);\n    transition: var(--transition);\n}",
+          "start_lineno": 188,
+          "end_lineno": 197
+        },
+        {
+          "selectors": [
+            "select:focus",
+            "input[type=\"text\"]:focus",
+            "input[type=\"number\"]:focus"
+          ],
+          "source_code": "select:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"number\"]:focus {\n    outline: none;\n    border-color: var(--primary);\n    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);\n}",
+          "start_lineno": 199,
+          "end_lineno": 205
+        },
+        {
+          "selectors": [
+            ".test-container"
+          ],
+          "source_code": ".test-container {\n    display: none;\n}",
+          "start_lineno": 207,
+          "end_lineno": 209
+        },
+        {
+          "selectors": [
+            ".question-area"
+          ],
+          "source_code": ".question-area {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    margin-bottom: 25px;\n}",
+          "start_lineno": 211,
+          "end_lineno": 216
+        },
+        {
+          "selectors": [
+            ".question"
+          ],
+          "source_code": ".question {\n    font-weight: 600;\n    font-size: 1.2rem;\n    line-height: 1.5;\n    color: var(--secondary);\n    flex-grow: 1;\n}",
+          "start_lineno": 218,
+          "end_lineno": 224
+        },
+        {
+          "selectors": [
+            ".instructions"
+          ],
+          "source_code": ".instructions {\n    font-style: italic;\n    color: var(--text-light);\n    margin-bottom: 20px;\n    text-align: center;\n    display: none;\n}",
+          "start_lineno": 226,
+          "end_lineno": 232
+        },
+        {
+          "selectors": [
+            ".options-container.drag-over"
+          ],
+          "source_code": ".options-container.drag-over {\n    border: 2px dashed var(--primary);\n    background-color: rgba(67, 97, 238, 0.05);\n}",
+          "start_lineno": 234,
+          "end_lineno": 237
+        },
+        {
+          "selectors": [
+            ".option.draggable.dragging"
+          ],
+          "source_code": ".option.draggable.dragging {\n    opacity: 0.5;\n    transform: scale(1.02);\n    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);\n}",
+          "start_lineno": 239,
+          "end_lineno": 243
+        },
+        {
+          "selectors": [
+            ".hint-icon"
+          ],
+          "source_code": ".hint-icon {\n    position: relative;\n    cursor: help;\n    color: var(--text-light);\n    font-size: 1.1rem;\n    flex-shrink: 0;\n    display: none;\n}",
+          "start_lineno": 245,
+          "end_lineno": 252
+        },
+        {
+          "selectors": [
+            ".hint-icon:hover"
+          ],
+          "source_code": ".hint-icon:hover {\n    color: var(--primary);\n}",
+          "start_lineno": 254,
+          "end_lineno": 256
+        },
+        {
+          "selectors": [
+            ".hint-icon::before",
+            ".hint-icon::after"
+          ],
+          "source_code": ".hint-icon::before,\n.hint-icon::after {\n    visibility: hidden;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 0.3s ease;\n    z-index: 10;\n}",
+          "start_lineno": 258,
+          "end_lineno": 265
+        },
+        {
+          "selectors": [
+            ".hint-icon:hover::before",
+            ".hint-icon:focus::before",
+            ".hint-icon:hover::after",
+            ".hint-icon:focus::after"
+          ],
+          "source_code": ".hint-icon:hover::before,\n.hint-icon:focus::before,\n.hint-icon:hover::after,\n.hint-icon:focus::after {\n    visibility: visible;\n    opacity: 1;\n}",
+          "start_lineno": 267,
+          "end_lineno": 273
+        },
+        {
+          "selectors": [
+            ".hint-icon::before"
+          ],
+          "source_code": ".hint-icon::before {\n    content: attr(data-hint);\n    position: absolute;\n    bottom: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-10px);\n    padding: 8px 12px;\n    background-color: var(--secondary);\n    color: white;\n    border-radius: 6px;\n    white-space: nowrap;\n    font-size: 0.9rem;\n    font-style: normal;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}",
+          "start_lineno": 275,
+          "end_lineno": 289
+        },
+        {
+          "selectors": [
+            ".hint-icon::after"
+          ],
+          "source_code": ".hint-icon::after {\n    content: '';\n    position: absolute;\n    bottom: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-4px);\n    border-width: 5px;\n    border-style: solid;\n    border-color: var(--secondary) transparent transparent transparent;\n}",
+          "start_lineno": 291,
+          "end_lineno": 300
+        },
+        {
+          "selectors": [
+            "@media (max-width: 600px)"
+          ],
+          "source_code": "@media (max-width: 600px) {\n    .hint-icon::before {\n        left: 0;\n        transform: translateX(0%) translateY(-10px);\n        white-space: normal;\n        width: 150px;\n    }",
+          "start_lineno": 302,
+          "end_lineno": 308
+        },
+        {
+          "selectors": [
+            ".hint-icon::after"
+          ],
+          "source_code": ".hint-icon::after {\n        left: 10px;\n        transform: translateX(0%) translateY(-4px);\n    }",
+          "start_lineno": 310,
+          "end_lineno": 313
+        },
+        {
+          "selectors": [
+            ".options"
+          ],
+          "source_code": ".options {\n    display: grid;\n    grid-template-columns: 1fr;\n    gap: 12px;\n    margin-bottom: 25px;\n}",
+          "start_lineno": 314,
+          "end_lineno": 319
+        },
+        {
+          "selectors": [
+            ".option"
+          ],
+          "source_code": ".option {\n    padding: 12px 15px;\n    background: var(--background);\n    border: 2px solid #e9ecef;\n    border-radius: 8px;\n    cursor: pointer;\n    transition: var(--transition);\n    font-weight: 500;\n    user-select: none;\n}",
+          "start_lineno": 323,
+          "end_lineno": 332
+        },
+        {
+          "selectors": [
+            ".option:hover"
+          ],
+          "source_code": ".option:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n    border-color: var(--primary-light);\n}",
+          "start_lineno": 334,
+          "end_lineno": 338
+        },
+        {
+          "selectors": [
+            ".option.selected"
+          ],
+          "source_code": ".option.selected {\n    background: var(--primary);\n    border-color: var(--primary);\n    color: white;\n    transform: translateY(-2px);\n    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);\n}",
+          "start_lineno": 340,
+          "end_lineno": 346
+        },
+        {
+          "selectors": [
+            ".option.correct"
+          ],
+          "source_code": ".option.correct {\n    background: var(--correct);\n    color: white;\n    border-color: var(--correct);\n    box-shadow: 0 5px 15px rgba(76, 201, 240, 0.3);\n}",
+          "start_lineno": 348,
+          "end_lineno": 353
+        },
+        {
+          "selectors": [
+            ".option.incorrect"
+          ],
+          "source_code": ".option.incorrect {\n    background: var(--incorrect);\n    color: white;\n    border-color: var(--incorrect);\n    box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);\n}",
+          "start_lineno": 355,
+          "end_lineno": 360
+        },
+        {
+          "selectors": [
+            ".option.disabled"
+          ],
+          "source_code": ".option.disabled {\n    pointer-events: none;\n    opacity: 0.8;\n}",
+          "start_lineno": 362,
+          "end_lineno": 365
+        },
+        {
+          "selectors": [
+            "input.disabled",
+            "input:disabled"
+          ],
+          "source_code": "input.disabled,\ninput:disabled {\n    background-color: #e9ecef;\n    opacity: 0.7;\n    cursor: not-allowed;\n}",
+          "start_lineno": 367,
+          "end_lineno": 372
+        },
+        {
+          "selectors": [
+            "input.correct"
+          ],
+          "source_code": "input.correct {\n    border-color: var(--correct);\n    box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.3);\n}",
+          "start_lineno": 374,
+          "end_lineno": 377
+        },
+        {
+          "selectors": [
+            "input.incorrect"
+          ],
+          "source_code": "input.incorrect {\n    border-color: var(--incorrect);\n    box-shadow: 0 0 0 3px rgba(247, 37, 133, 0.3);\n}",
+          "start_lineno": 379,
+          "end_lineno": 382
+        },
+        {
+          "selectors": [
+            "button"
+          ],
+          "source_code": "button {\n    background: var(--primary);\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    cursor: pointer;\n    font-size: 1rem;\n    font-weight: 600;\n    transition: var(--transition);\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}",
+          "start_lineno": 386,
+          "end_lineno": 399
+        },
+        {
+          "selectors": [
+            "button:hover"
+          ],
+          "source_code": "button:hover {\n    background: var(--secondary);\n    transform: translateY(-2px);\n    box-shadow: 0 5px 15px rgba(58, 12, 163, 0.3);\n}",
+          "start_lineno": 401,
+          "end_lineno": 405
+        },
+        {
+          "selectors": [
+            "button:disabled"
+          ],
+          "source_code": "button:disabled {\n    background: #adb5bd;\n    cursor: not-allowed;\n    transform: none;\n    box-shadow: none;\n}",
+          "start_lineno": 407,
+          "end_lineno": 412
+        },
+        {
+          "selectors": [
+            ".navigation"
+          ],
+          "source_code": ".navigation {\n    display: flex;\n    justify-content: space-between;\n    margin-top: 30px;\n}",
+          "start_lineno": 414,
+          "end_lineno": 418
+        },
+        {
+          "selectors": [
+            ".test-container .progress"
+          ],
+          "source_code": ".test-container .progress {\n    margin-bottom: 25px;\n    font-weight: 600;\n    color: var(--text-light);\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}",
+          "start_lineno": 420,
+          "end_lineno": 427
+        },
+        {
+          "selectors": [
+            ".test-container .progress i"
+          ],
+          "source_code": ".test-container .progress i {\n    color: var(--primary);\n}",
+          "start_lineno": 429,
+          "end_lineno": 431
+        },
+        {
+          "selectors": [
+            ".results"
+          ],
+          "source_code": ".results {\n    display: none;\n    text-align: center;\n}",
+          "start_lineno": 433,
+          "end_lineno": 436
+        },
+        {
+          "selectors": [
+            ".score"
+          ],
+          "source_code": ".score {\n    font-size: 3rem;\n    font-weight: 700;\n    color: var(--secondary);\n    margin: 30px 0;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    -webkit-background-clip: text;\n    background-clip: text;\n    -webkit-text-fill-color: transparent;\n    color: transparent;\n}",
+          "start_lineno": 438,
+          "end_lineno": 448
+        },
+        {
+          "selectors": [
+            ".feedback"
+          ],
+          "source_code": ".feedback {\n    margin-top: 30px;\n    text-align: left;\n    background: var(--background);\n    padding: 20px;\n    border-radius: 10px;\n}",
+          "start_lineno": 450,
+          "end_lineno": 456
+        },
+        {
+          "selectors": [
+            ".feedback-item"
+          ],
+          "source_code": ".feedback-item {\n    margin-bottom: 20px;\n    padding-bottom: 20px;\n    border-bottom: 1px solid #e9ecef;\n}",
+          "start_lineno": 458,
+          "end_lineno": 462
+        },
+        {
+          "selectors": [
+            ".feedback-item:last-child"
+          ],
+          "source_code": ".feedback-item:last-child {\n    border-bottom: none;\n    margin-bottom: 0;\n    padding-bottom: 0;\n}",
+          "start_lineno": 464,
+          "end_lineno": 468
+        },
+        {
+          "selectors": [
+            ".file-upload"
+          ],
+          "source_code": ".file-upload {\n    margin: 30px 0;\n    padding: 30px;\n    border: 2px dashed #adb5bd;\n    border-radius: 12px;\n    text-align: center;\n    background: rgba(233, 236, 239, 0.5);\n    transition: var(--transition);\n}",
+          "start_lineno": 470,
+          "end_lineno": 478
+        },
+        {
+          "selectors": [
+            ".file-upload.drag-over"
+          ],
+          "source_code": ".file-upload.drag-over {\n    border-color: var(--primary);\n    background: rgba(67, 97, 238, 0.1);\n}",
+          "start_lineno": 480,
+          "end_lineno": 483
+        },
+        {
+          "selectors": [
+            ".file-upload p"
+          ],
+          "source_code": ".file-upload p {\n    margin: 10px 0;\n    color: var(--text-light);\n}",
+          "start_lineno": 485,
+          "end_lineno": 488
+        },
+        {
+          "selectors": [
+            ".question-stats"
+          ],
+          "source_code": ".question-stats {\n    margin-top: 20px;\n    font-size: 0.95rem;\n    line-height: 1.6;\n    background: var(--background);\n    padding: 15px;\n    border-radius: 8px;\n}",
+          "start_lineno": 491,
+          "end_lineno": 498
+        },
+        {
+          "selectors": [
+            ".question-stats strong"
+          ],
+          "source_code": ".question-stats strong {\n    color: var(--primary);\n}",
+          "start_lineno": 500,
+          "end_lineno": 502
+        },
+        {
+          "selectors": [
+            ".danger-zone"
+          ],
+          "source_code": ".danger-zone {\n    margin: 30px 0;\n    padding: 20px;\n    border: 2px solid #ffccd5;\n    border-radius: 12px;\n    background-color: #fff0f3;\n    text-align: center;\n}",
+          "start_lineno": 504,
+          "end_lineno": 511
+        },
+        {
+          "selectors": [
+            ".danger-btn"
+          ],
+          "source_code": ".danger-btn {\n    background-color: var(--danger) !important;\n}",
+          "start_lineno": 513,
+          "end_lineno": 515
+        },
+        {
+          "selectors": [
+            ".danger-btn:hover"
+          ],
+          "source_code": ".danger-btn:hover {\n    background-color: #d00000 !important;\n}",
+          "start_lineno": 517,
+          "end_lineno": 519
+        },
+        {
+          "selectors": [
+            ".warning-text"
+          ],
+          "source_code": ".warning-text {\n    font-size: 0.85rem;\n    color: var(--danger);\n    margin-top: 10px;\n}",
+          "start_lineno": 521,
+          "end_lineno": 525
+        },
+        {
+          "selectors": [
+            ".identifier-filter"
+          ],
+          "source_code": ".identifier-filter {\n    margin-top: 20px;\n}",
+          "start_lineno": 527,
+          "end_lineno": 529
+        },
+        {
+          "selectors": [
+            ".pulse"
+          ],
+          "source_code": ".pulse {\n    animation: pulse 2s infinite;\n}",
+          "start_lineno": 531,
+          "end_lineno": 533
+        },
+        {
+          "selectors": [
+            "@keyframes pulse"
+          ],
+          "source_code": "@keyframes pulse {\n    0% {\n        transform: scale(1);\n    }",
+          "start_lineno": 535,
+          "end_lineno": 538
+        },
+        {
+          "selectors": [
+            "50%"
+          ],
+          "source_code": "50% {\n        transform: scale(1.05);\n    }",
+          "start_lineno": 540,
+          "end_lineno": 542
+        },
+        {
+          "selectors": [
+            "100%"
+          ],
+          "source_code": "100% {\n        transform: scale(1);\n    }",
+          "start_lineno": 544,
+          "end_lineno": 546
+        },
+        {
+          "selectors": [
+            ".shake"
+          ],
+          "source_code": ".shake {\n    animation: shake 0.5s;\n}",
+          "start_lineno": 547,
+          "end_lineno": 549
+        },
+        {
+          "selectors": [
+            "@keyframes shake"
+          ],
+          "source_code": "@keyframes shake {\n    0%,\n    100% {\n        transform: translateX(0);\n    }",
+          "start_lineno": 553,
+          "end_lineno": 557
+        },
+        {
+          "selectors": [
+            "20%",
+            "60%"
+          ],
+          "source_code": "20%,\n    60% {\n        transform: translateX(-5px);\n    }",
+          "start_lineno": 559,
+          "end_lineno": 562
+        },
+        {
+          "selectors": [
+            "40%",
+            "80%"
+          ],
+          "source_code": "40%,\n    80% {\n        transform: translateX(5px);\n    }",
+          "start_lineno": 564,
+          "end_lineno": 567
+        },
+        {
+          "selectors": [
+            "@media (max-width: 768px)"
+          ],
+          "source_code": "@media (max-width: 768px) {\n    .filter-section {\n        grid-template-columns: 1fr;\n    }",
+          "start_lineno": 568,
+          "end_lineno": 571
+        },
+        {
+          "selectors": [
+            ".navigation"
+          ],
+          "source_code": ".navigation {\n        flex-direction: column;\n        gap: 15px;\n    }",
+          "start_lineno": 575,
+          "end_lineno": 578
+        },
+        {
+          "selectors": [
+            "button"
+          ],
+          "source_code": "button {\n        width: 100%;\n        justify-content: center;\n    }",
+          "start_lineno": 580,
+          "end_lineno": 583
+        },
+        {
+          "selectors": [
+            "h1"
+          ],
+          "source_code": "h1 {\n        font-size: 2rem;\n    }",
+          "start_lineno": 585,
+          "end_lineno": 587
+        },
+        {
+          "selectors": [
+            "@media (max-width: 480px)"
+          ],
+          "source_code": "@media (max-width: 480px) {\n    body {\n        padding: 10px;\n    }",
+          "start_lineno": 588,
+          "end_lineno": 591
+        },
+        {
+          "selectors": [
+            "header",
+            ".settings-panel",
+            ".test-container",
+            ".results"
+          ],
+          "source_code": "header,\n    .settings-panel,\n    .test-container,\n    .results {\n        padding: 15px;\n    }",
+          "start_lineno": 595,
+          "end_lineno": 600
+        },
+        {
+          "selectors": [
+            ".correct-answer"
+          ],
+          "source_code": ".correct-answer {\n    font-weight: bold;\n    color: var(--success);\n}",
+          "start_lineno": 601,
+          "end_lineno": 604
+        },
+        {
+          "selectors": [
+            ".user-mistake"
+          ],
+          "source_code": ".user-mistake {\n    color: var(--incorrect);\n}",
+          "start_lineno": 608,
+          "end_lineno": 610
+        },
+        {
+          "selectors": [
+            ".badge"
+          ],
+          "source_code": ".badge {\n    background: linear-gradient(135deg, var(--primary), var(--accent));\n    color: white;\n    padding: 5px 10px;\n    border-radius: 20px;\n    font-size: 0.8rem;\n    font-weight: 600;\n    display: inline-flex;\n    align-items: center;\n    gap: 5px;\n    margin: 2px;\n}",
+          "start_lineno": 612,
+          "end_lineno": 623
+        }
+      ],
+      "start_lineno": 1,
+      "end_lineno": 623,
+      "full_content": ":root {\n    --primary: #4361ee;\n    --primary-light: #4cc9f0;\n    --secondary: #3a0ca3;\n    --accent: #f72585;\n    --background: #f8f9fa;\n    --card-bg: #ffffff;\n    --text: #2b2d42;\n    --text-light: #8d99ae;\n    --correct: #4cc9f0;\n    --incorrect: #f72585;\n    --warning: #ff9e00;\n    --danger: #ef233c;\n    --success: #38b000;\n    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);\n    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n\nbody {\n    font-family: 'Poppins', sans-serif;\n    line-height: 1.6;\n    color: var(--text);\n    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);\n    margin: 0;\n    padding: 10px;\n    min-height: 100vh;\n}\n\n.container {\n    max-width: 1000px;\n    margin: 0 auto;\n}\n\nheader {\n    text-align: center;\n    margin-bottom: 20px;\n    padding: 20px;\n    background: var(--card-bg);\n    border-radius: 12px;\n    box-shadow: var(--card-shadow);\n    position: relative;\n    overflow: hidden;\n}\n\nheader::after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 4px;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n}\n\nh1 {\n    color: var(--secondary);\n    margin-bottom: 10px;\n    font-size: 2.5rem;\n    font-weight: 700;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    -webkit-background-clip: text;\n    background-clip: text;\n    -webkit-text-fill-color: transparent;\n    color: transparent;\n}\n\n.subtitle {\n    color: var(--text-light);\n    font-size: 1.1rem;\n    margin-bottom: 20px;\n}\n\n.gamification-panel {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    margin-top: 10px;\n    padding: 10px 20px;\n    background: rgba(255, 255, 255, 0.7);\n    border-radius: 10px;\n    backdrop-filter: blur(5px);\n    flex-wrap: wrap;\n}\n\n.stars-container {\n    color: var(--warning);\n    font-size: 1.2rem;\n    margin-top: 0;\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    flex-shrink: 0;\n}\n\n.badge-container {\n    margin-top: 0;\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    flex-shrink: 0;\n}\n\n.progress-container {\n    flex-grow: 1;\n    margin: 0 15px;\n    height: 8px;\n    background: #e9ecef;\n    border-radius: 4px;\n    overflow: hidden;\n    min-width: 100px;\n}\n\n.progress-bar {\n    height: 100%;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    width: 0%;\n    transition: width 0.5s ease;\n}\n\n@media (max-width: 600px) {\n    .gamification-panel {\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n    }\n\n    .progress-container {\n        width: 100%;\n        margin: 10px 0 0 0;\n    }\n\n    .stars-container,\n    .badge-container {\n        width: 100%;\n        justify-content: center;\n    }\n}\n\n.settings-panel,\n.test-container,\n.results {\n    background: var(--card-bg);\n    padding: 20px;\n    border-radius: 15px;\n    box-shadow: var(--card-shadow);\n    margin-bottom: 20px;\n    transition: var(--transition);\n}\n\nh2 {\n    color: var(--secondary);\n    margin-top: 0;\n    margin-bottom: 15px;\n    font-size: 1.8rem;\n    position: relative;\n    padding-bottom: 10px;\n}\n\nh2::after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 50px;\n    height: 3px;\n    background: var(--accent);\n}\n\n.filter-section {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 10px;\n    margin-bottom: 10px;\n}\n\n.filter-group {\n    display: flex;\n    flex-direction: column;\n}\n\nlabel {\n    font-weight: 500;\n    margin-bottom: 5px;\n    color: var(--text);\n}\n\nselect,\ninput[type=\"text\"],\ninput[type=\"number\"] {\n    padding: 8px 12px;\n    border: 2px solid #e9ecef;\n    border-radius: 8px;\n    font-family: 'Poppins', sans-serif;\n    background-color: var(--card-bg);\n    transition: var(--transition);\n}\n\nselect:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"number\"]:focus {\n    outline: none;\n    border-color: var(--primary);\n    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);\n}\n\n.test-container {\n    display: none;\n}\n\n.question-area {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    margin-bottom: 25px;\n}\n\n.question {\n    font-weight: 600;\n    font-size: 1.2rem;\n    line-height: 1.5;\n    color: var(--secondary);\n    flex-grow: 1;\n}\n\n.instructions {\n    font-style: italic;\n    color: var(--text-light);\n    margin-bottom: 20px;\n    text-align: center;\n    display: none;\n}\n\n.options-container.drag-over {\n    border: 2px dashed var(--primary);\n    background-color: rgba(67, 97, 238, 0.05);\n}\n\n.option.draggable.dragging {\n    opacity: 0.5;\n    transform: scale(1.02);\n    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);\n}\n\n.hint-icon {\n    position: relative;\n    cursor: help;\n    color: var(--text-light);\n    font-size: 1.1rem;\n    flex-shrink: 0;\n    display: none;\n}\n\n.hint-icon:hover {\n    color: var(--primary);\n}\n\n.hint-icon::before,\n.hint-icon::after {\n    visibility: hidden;\n    opacity: 0;\n    pointer-events: none;\n    transition: opacity 0.3s ease;\n    z-index: 10;\n}\n\n.hint-icon:hover::before,\n.hint-icon:focus::before,\n.hint-icon:hover::after,\n.hint-icon:focus::after {\n    visibility: visible;\n    opacity: 1;\n}\n\n.hint-icon::before {\n    content: attr(data-hint);\n    position: absolute;\n    bottom: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-10px);\n    padding: 8px 12px;\n    background-color: var(--secondary);\n    color: white;\n    border-radius: 6px;\n    white-space: nowrap;\n    font-size: 0.9rem;\n    font-style: normal;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n\n.hint-icon::after {\n    content: '';\n    position: absolute;\n    bottom: 100%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-4px);\n    border-width: 5px;\n    border-style: solid;\n    border-color: var(--secondary) transparent transparent transparent;\n}\n\n@media (max-width: 600px) {\n    .hint-icon::before {\n        left: 0;\n        transform: translateX(0%) translateY(-10px);\n        white-space: normal;\n        width: 150px;\n    }\n\n    .hint-icon::after {\n        left: 10px;\n        transform: translateX(0%) translateY(-4px);\n    }\n}\n\n.options {\n    display: grid;\n    grid-template-columns: 1fr;\n    gap: 12px;\n    margin-bottom: 25px;\n}\n\n.option {\n    padding: 12px 15px;\n    background: var(--background);\n    border: 2px solid #e9ecef;\n    border-radius: 8px;\n    cursor: pointer;\n    transition: var(--transition);\n    font-weight: 500;\n    user-select: none;\n}\n\n.option:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n    border-color: var(--primary-light);\n}\n\n.option.selected {\n    background: var(--primary);\n    border-color: var(--primary);\n    color: white;\n    transform: translateY(-2px);\n    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);\n}\n\n.option.correct {\n    background: var(--correct);\n    color: white;\n    border-color: var(--correct);\n    box-shadow: 0 5px 15px rgba(76, 201, 240, 0.3);\n}\n\n.option.incorrect {\n    background: var(--incorrect);\n    color: white;\n    border-color: var(--incorrect);\n    box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);\n}\n\n.option.disabled {\n    pointer-events: none;\n    opacity: 0.8;\n}\n\ninput.disabled,\ninput:disabled {\n    background-color: #e9ecef;\n    opacity: 0.7;\n    cursor: not-allowed;\n}\n\ninput.correct {\n    border-color: var(--correct);\n    box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.3);\n}\n\ninput.incorrect {\n    border-color: var(--incorrect);\n    box-shadow: 0 0 0 3px rgba(247, 37, 133, 0.3);\n}\n\n\n\nbutton {\n    background: var(--primary);\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    cursor: pointer;\n    font-size: 1rem;\n    font-weight: 600;\n    transition: var(--transition);\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n\nbutton:hover {\n    background: var(--secondary);\n    transform: translateY(-2px);\n    box-shadow: 0 5px 15px rgba(58, 12, 163, 0.3);\n}\n\nbutton:disabled {\n    background: #adb5bd;\n    cursor: not-allowed;\n    transform: none;\n    box-shadow: none;\n}\n\n.navigation {\n    display: flex;\n    justify-content: space-between;\n    margin-top: 30px;\n}\n\n.test-container .progress {\n    margin-bottom: 25px;\n    font-weight: 600;\n    color: var(--text-light);\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.test-container .progress i {\n    color: var(--primary);\n}\n\n.results {\n    display: none;\n    text-align: center;\n}\n\n.score {\n    font-size: 3rem;\n    font-weight: 700;\n    color: var(--secondary);\n    margin: 30px 0;\n    background: linear-gradient(90deg, var(--primary), var(--accent));\n    -webkit-background-clip: text;\n    background-clip: text;\n    -webkit-text-fill-color: transparent;\n    color: transparent;\n}\n\n.feedback {\n    margin-top: 30px;\n    text-align: left;\n    background: var(--background);\n    padding: 20px;\n    border-radius: 10px;\n}\n\n.feedback-item {\n    margin-bottom: 20px;\n    padding-bottom: 20px;\n    border-bottom: 1px solid #e9ecef;\n}\n\n.feedback-item:last-child {\n    border-bottom: none;\n    margin-bottom: 0;\n    padding-bottom: 0;\n}\n\n.file-upload {\n    margin: 30px 0;\n    padding: 30px;\n    border: 2px dashed #adb5bd;\n    border-radius: 12px;\n    text-align: center;\n    background: rgba(233, 236, 239, 0.5);\n    transition: var(--transition);\n}\n\n.file-upload.drag-over {\n    border-color: var(--primary);\n    background: rgba(67, 97, 238, 0.1);\n}\n\n.file-upload p {\n    margin: 10px 0;\n    color: var(--text-light);\n}\n\n\n.question-stats {\n    margin-top: 20px;\n    font-size: 0.95rem;\n    line-height: 1.6;\n    background: var(--background);\n    padding: 15px;\n    border-radius: 8px;\n}\n\n.question-stats strong {\n    color: var(--primary);\n}\n\n.danger-zone {\n    margin: 30px 0;\n    padding: 20px;\n    border: 2px solid #ffccd5;\n    border-radius: 12px;\n    background-color: #fff0f3;\n    text-align: center;\n}\n\n.danger-btn {\n    background-color: var(--danger) !important;\n}\n\n.danger-btn:hover {\n    background-color: #d00000 !important;\n}\n\n.warning-text {\n    font-size: 0.85rem;\n    color: var(--danger);\n    margin-top: 10px;\n}\n\n.identifier-filter {\n    margin-top: 20px;\n}\n\n.pulse {\n    animation: pulse 2s infinite;\n}\n\n@keyframes pulse {\n    0% {\n        transform: scale(1);\n    }\n\n    50% {\n        transform: scale(1.05);\n    }\n\n    100% {\n        transform: scale(1);\n    }\n}\n\n.shake {\n    animation: shake 0.5s;\n}\n\n@keyframes shake {\n    0%,\n    100% {\n        transform: translateX(0);\n    }\n\n    20%,\n    60% {\n        transform: translateX(-5px);\n    }\n\n    40%,\n    80% {\n        transform: translateX(5px);\n    }\n}\n\n@media (max-width: 768px) {\n    .filter-section {\n        grid-template-columns: 1fr;\n    }\n\n    .navigation {\n        flex-direction: column;\n        gap: 15px;\n    }\n\n    button {\n        width: 100%;\n        justify-content: center;\n    }\n\n    h1 {\n        font-size: 2rem;\n    }\n}\n\n@media (max-width: 480px) {\n    body {\n        padding: 10px;\n    }\n\n    header,\n    .settings-panel,\n    .test-container,\n    .results {\n        padding: 15px;\n    }\n}\n\n.correct-answer {\n    font-weight: bold;\n    color: var(--success);\n}\n\n.user-mistake {\n    color: var(--incorrect);\n}\n\n.badge {\n    background: linear-gradient(135deg, var(--primary), var(--accent));\n    color: white;\n    padding: 5px 10px;\n    border-radius: 20px;\n    font-size: 0.8rem;\n    font-weight: 600;\n    display: inline-flex;\n    align-items: center;\n    gap: 5px;\n    margin: 2px;\n}"
+    },
+    "js/app.js": {
+      "path": "js/app.js",
+      "type": "js",
+      "full_content": "// js/app.js\n\nGamification.init(UIRenderer.updateStarCount, UIRenderer.renderBadges);\n\n// Main application initialization\ndocument.addEventListener('DOMContentLoaded', () => {\n    console.log(\"Quiz App DOM fully loaded. Initializing...\");\n\n    // 1. Load initial data (questions)\n    DataManager.loadSavedQuestions();\n    DataManager.rebuildMasterFilterLists(); // Populate filter lists from loaded questions\n\n    // Gamification is initialized by calling Gamification.init() after UIRenderer is ready\n    // Gamification.loadGamificationData() is called *inside* Gamification.init()\n\n    // 2. Update initial UI based on loaded data\n    // Populate filter dropdowns and update stats based on initial state\n    EventHandlers.updateFilterDropdownsAndStats(); // Call the combined function\n\n    // 3. Bind all event listeners\n    EventHandlers.bindEventListeners();\n\n    // 4. Show the initial view (settings panel)\n    UIRenderer.showSettings();\n\n    console.log(\"Quiz App initialization complete.\");\n});\n\n// Optional: Expose modules globally for debugging in the browser console\n// window.Utils = Utils;\n// window.DataManager = DataManager;\n// window.TestManager = TestManager;\n// window.UIRenderer = UIRenderer;\n// window.EventHandlers = EventHandlers;\n// window.Gamification = Gamification;\n// window.FileHandler = FileHandler;\n",
+      "start_lineno": 1,
+      "end_lineno": 36
+    },
+    "js/dataManager.js": {
+      "path": "js/dataManager.js",
+      "type": "js",
+      "full_content": "// js/dataManager.js\n\nconst DataManager = (function(Utils) {\n    // --------------- VARIABLES ---------------\n    let questionBank = [];\n    let subjectList = new Set();\n    let gradeLevelList = new Set();\n    let identifierList = new Set();\n\n    // Access constants from Utils\n    const LOCAL_STORAGE_KEYS = Utils.LOCAL_STORAGE_KEYS;\n    const FILTER_VALUES = Utils.FILTER_VALUES;\n\n    // --------------- QUESTION MANAGEMENT ---------------\n\n    function loadSavedQuestions() {\n        try {\n            const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONS);\n            questionBank = saved ? JSON.parse(saved) : [];\n            console.log(`Loaded ${questionBank.length} questions from local storage.`);\n        } catch (e) {\n            Utils.showErrorMessage('Error parsing saved questions. Clearing saved data.');\n            console.error('Error parsing saved questions', e);\n            localStorage.removeItem(LOCAL_STORAGE_KEYS.QUESTIONS);\n            questionBank = [];\n        }\n    }\n\n    function rebuildMasterFilterLists() {\n        subjectList.clear();\n        gradeLevelList.clear();\n        identifierList.clear();\n        questionBank.forEach(q => {\n            subjectList.add(q.filenameData.subject || FILTER_VALUES.GENERAL);\n            gradeLevelList.add(q.filenameData.gradeLevel || FILTER_VALUES.UNKNOWN);\n            identifierList.add(q.filenameData.identifier || FILTER_VALUES.UNKNOWN);\n        });\n         console.log(`Rebuilt filter lists: Subjects(${subjectList.size}), Grades(${gradeLevelList.size}), Identifiers(${identifierList.size})`);\n    }\n\n    function saveQuestionsToLocalStorage() {\n        try {\n            localStorage.setItem(LOCAL_STORAGE_KEYS.QUESTIONS, JSON.stringify(questionBank));\n            console.log(\"Questions saved to local storage.\");\n        } catch (e) {\n             Utils.showErrorMessage('Error saving questions to local storage.');\n            console.error('Error saving questions', e);\n        }\n    }\n\n     function parseFilename(fname) {\n         const parts = fname.replace('.json', '').split('_');\n         const subject = parts[0] || FILTER_VALUES.GENERAL;\n         let gradeLevel = FILTER_VALUES.UNKNOWN;\n         let identifier = FILTER_VALUES.UNKNOWN;\n         const gi = parts.findIndex(p => p.startsWith('grade') && !isNaN(parseInt(p.replace('grade', ''))));\n         if (gi !== -1) {\n             gradeLevel = parts[gi].replace('grade', '');\n             identifier = parts.slice(gi + 1).join('_') || FILTER_VALUES.UNKNOWN;\n         } else {\n             identifier = parts.slice(1).join('_') || FILTER_VALUES.UNKNOWN;\n         }\n         identifier = identifier.replace(/_+$/, '');\n         identifier = identifier || FILTER_VALUES.UNKNOWN;\n         return {\n             subject,\n             gradeLevel,\n             identifier,\n             full: fname\n         };\n     }\n\n\n    function addQuestionToBankInternal(q) {\n        // Ensure question has a unique ID\n        q.questionId = q.questionId || `q_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;\n\n        // Check if a question with the same ID already exists\n        if (!questionBank.some(qq => qq.questionId === q.questionId)) {\n            // Ensure filenameData exists\n            q.filenameData = q.filenameData || {\n                subject: FILTER_VALUES.GENERAL,\n                gradeLevel: FILTER_VALUES.UNKNOWN,\n                identifier: FILTER_VALUES.UNKNOWN,\n                full: 'unknown.json'\n            };\n            questionBank.push(q);\n            return true; // Question was added\n        }\n        return false; // Question was a duplicate\n    }\n\n    function addQuestionsAndUpdateFilters(qs) {\n        let count = 0;\n        qs.forEach(q => {\n            if (addQuestionToBankInternal(q)) count++;\n        });\n        if (count > 0) {\n            saveQuestionsToLocalStorage();\n            rebuildMasterFilterLists(); // Rebuild filter lists after adding new questions\n        }\n        return count; // Return number of new questions added\n    }\n\n     function deleteQuestions() {\n         questionBank = [];\n         localStorage.removeItem(LOCAL_STORAGE_KEYS.QUESTIONS);\n         rebuildMasterFilterLists(); // Rebuild filter lists after deleting\n     }\n\n\n    // --------------- FILTERING ---------------\n    function filterQuestions(subject, grade, identifier) {\n        return questionBank.filter(q => {\n            const qSubject = q.filenameData.subject || FILTER_VALUES.GENERAL;\n            const qGrade = q.filenameData.gradeLevel || FILTER_VALUES.UNKNOWN;\n            const qIdentifier = q.filenameData.identifier || FILTER_VALUES.UNKNOWN;\n            const sm = subject === FILTER_VALUES.ALL || qSubject === subject;\n            const gm = grade === FILTER_VALUES.ALL || qGrade === grade;\n            const im = identifier === FILTER_VALUES.ALL || qIdentifier === identifier;\n            return sm && gm && im;\n        });\n    }\n\n    // --------------- GETTERS ---------------\n    function getFilterLists() {\n        return {\n            subjectList: new Set(subjectList), // Return copies to prevent external modification\n            gradeLevelList: new Set(gradeLevelList),\n            identifierList: new Set(identifierList)\n        };\n    }\n\n    function getQuestionBank() {\n        return [...questionBank]; // Return a copy of the array\n    }\n\n    function getQuestionCount() {\n        return questionBank.length;\n    }\n\n\n    // Public API\n    return {\n        loadSavedQuestions,\n        rebuildMasterFilterLists,\n        saveQuestionsToLocalStorage, // Might be needed externally if other modules trigger saves\n        parseFilename, // Needed by FileHandler\n        addQuestionsAndUpdateFilters, // Needed by FileHandler\n        deleteQuestions, // Needed by EventHandlers (Danger Zone)\n        filterQuestions, // Needed by TestManager (to get test pool) and EventHandlers (to update stats)\n        getFilterLists, // Needed by UIRenderer (to populate filters) and EventHandlers (to update stats)\n        getQuestionBank, // Might be needed for debugging or future features\n        getQuestionCount // Needed by EventHandlers (to update stats)\n    };\n})(Utils); // Pass Utils as an argument\n",
+      "start_lineno": 1,
+      "end_lineno": 156
+    },
+    "js/eventHandlers.js": {
+      "path": "js/eventHandlers.js",
+      "type": "js",
+      "full_content": "// js/eventHandlers.js\n\nconst EventHandlers = (function(Utils, UIRenderer, DataManager, TestManager, Gamification, FileHandler) {\n    // This module binds all event listeners and defines the core logic\n    // executed when events occur. It coordinates calls to other modules.\n\n    // Access constants and DOM elements from other modules\n    const DOM = UIRenderer.DOM;\n    const QUESTION_TYPES = Utils.QUESTION_TYPES;\n    const CSS_CLASSES = Utils.CSS_CLASSES;\n\n    // --------------- BINDING LISTENERS ---------------\n\n    function bindEventListeners() {\n        // Bind listeners using DOM elements exposed by UIRenderer\n        DOM.startTestBtn.addEventListener('click', handleStartTestClick);\n        DOM.newTestBtn.addEventListener('click', handleNewTestClick);\n        DOM.prevQuestionBtn.addEventListener('click', handlePrevQuestionClick);\n        DOM.nextQuestionBtn.addEventListener('click', handleNextQuestionClick);\n        DOM.submitAnswerBtn.addEventListener('click', handleSubmitAnswerClick);\n\n        DOM.browseFilesBtn.addEventListener('click', handleBrowseFilesClick);\n        DOM.fileInput.addEventListener('change', handleFileInputChange);\n        DOM.fileUpload.addEventListener('dragover', handleFileUploadDragOver);\n        DOM.fileUpload.addEventListener('dragleave', handleFileUploadDragLeave);\n        DOM.fileUpload.addEventListener('drop', handleFileUploadDrop);\n\n        DOM.deleteQuestionsBtn.addEventListener('click', handleDeleteQuestionsClick);\n        DOM.resetBadgesBtn.addEventListener('click', handleResetBadgesClick);\n\n        DOM.subjectFilter.addEventListener('change', handleFilterChange);\n        DOM.gradeFilter.addEventListener('change', handleFilterChange);\n        DOM.identifierFilter.addEventListener('change', updateQuestionStats); // Identifier filter only needs to update stats\n\n        // Add delegated listeners for options container clicks (single/multi-select)\n        DOM.optionsContainer.addEventListener('click', handleOptionsContainerClick);\n\n        // Note: Drag/Touch listeners for Ordering questions are bound directly to elements/container\n        // within UIRenderer.renderOrderingOptions when that question type is displayed.\n    }\n\n    // --------------- EVENT HANDLERS ---------------\n\n    function handleStartTestClick() {\n        const selectedSubject = DOM.subjectFilter.value;\n        const selectedGrade = DOM.gradeFilter.value;\n        const selectedIdentifier = DOM.identifierFilter.value;\n        const testLength = parseInt(DOM.testLengthSelect.value);\n\n        const availableQuestions = DataManager.filterQuestions(selectedSubject, selectedGrade, selectedIdentifier);\n\n        // Attempt to start the test\n        const testStarted = TestManager.startNewTest(availableQuestions, testLength);\n\n        if (testStarted) {\n            UIRenderer.showTest(TestManager.getQuestionCount());\n            displayCurrentQuestion(); // Display the first question\n             // Update progress bar initially (0 answered out of total)\n             UIRenderer.updateProgressBar(0, TestManager.getQuestionCount());\n        } else {\n            // TestManager.startNewTest already showed a warning if not enough questions\n            // No action needed here other than not proceeding to show the test\n        }\n    }\n\n    function handleNewTestClick() {\n        TestManager.resetTestState(); // Reset test variables\n        UIRenderer.showSettings(); // Show settings panel\n        updateFilterDropdownsAndStats(); // Update filter options and stats\n    }\n\n    function handlePrevQuestionClick() {\n        TestManager.showPreviousQuestion(); // Update index in TestManager\n        displayCurrentQuestion(); // Display the new current question\n         // Update progress bar\n         UIRenderer.updateProgressBar(\n             TestManager.getCurrentQuestionIndex() + (TestManager.isQuestionAnswered() ? 1 : 0), // Add 1 to current index if answered, otherwise just show current index\n             TestManager.getQuestionCount()\n         );\n    }\n\n    function handleNextQuestionClick() {\n        if (TestManager.isTestFinished()) {\n            showTestResults();\n        } else {\n            TestManager.showNextQuestion(); // Update index in TestManager\n            displayCurrentQuestion(); // Display the new current question\n             // Update progress bar\n             UIRenderer.updateProgressBar(\n                 TestManager.getCurrentQuestionIndex() + (TestManager.isQuestionAnswered() ? 1 : 0), // Add 1 to current index if answered, otherwise just show current index\n                 TestManager.getQuestionCount()\n             );\n        }\n    }\n\n    function handleSubmitAnswerClick() {\n        const currentQuestion = TestManager.getCurrentQuestion();\n        if (!currentQuestion) return; // Should not happen if submit button is visible\n\n        const questionType = currentQuestion.type || Utils.QUESTION_TYPES.SINGLE;\n        // Get the user's answer from the UI state\n        const userAnswer = UIRenderer.getUserAnswerFromUI(questionType);\n\n        // Submit the answer via TestManager\n        const submitResult = TestManager.submitAnswer(userAnswer);\n\n        if (submitResult.success) {\n            // Answer was successfully recorded (not already answered, answer was provided)\n            // Apply feedback styles based on correctness\n            UIRenderer.applyFeedbackStyles(currentQuestion, userAnswer, submitResult.correct);\n\n            // Disable options after submission\n            UIRenderer.disableOptions();\n\n            // Hide submit button and enable next button\n            DOM.submitAnswerBtn.style.display = 'none';\n            DOM.nextQuestionBtn.disabled = false;\n\n            // Update gamification if correct\n            if (submitResult.correct) {\n                Gamification.incrementStars(1);\n            }\n\n             // Update progress bar (increment current count because it's now answered)\n             UIRenderer.updateProgressBar(\n                 TestManager.getCurrentQuestionIndex() + 1, // +1 because it's now answered\n                 TestManager.getQuestionCount()\n             );\n\n\n        } else if (submitResult.noAnswer) {\n            // Handle case where no answer was provided (e.g., shake effect)\n            const input = DOM.optionsContainer.querySelector(`.${CSS_CLASSES.FILL_IN_INPUT}`);\n            if (input) input.classList.add(CSS_CLASSES.SHAKE);\n            DOM.optionsContainer.classList.add(CSS_CLASSES.SHAKE);\n            setTimeout(() => {\n                if (input) input.classList.remove(CSS_CLASSES.SHAKE);\n                DOM.optionsContainer.classList.remove(CSS_CLASSES.SHAKE);\n            }, 500);\n        }\n        // If alreadyAnswered is true, submitAnswer did nothing, so no UI update needed\n    }\n\n    // Helper to display the question managed by TestManager\n    function displayCurrentQuestion() {\n        const currentQuestion = TestManager.getCurrentQuestion();\n        const userSavedAnswer = TestManager.getUserAnswerForCurrentQuestion(); // Get saved answer if exists\n        const totalQuestions = TestManager.getQuestionCount();\n        const currentIndex = TestManager.getCurrentQuestionIndex();\n\n        UIRenderer.displayQuestion(currentQuestion, userSavedAnswer, totalQuestions, currentIndex);\n\n         // updateProgressBar is now called separately after navigation/submit\n    }\n\n    function showTestResults() {\n        const results = TestManager.getCurrentTestResults();\n        UIRenderer.updateScoreDisplay(results.score);\n        UIRenderer.displayFeedback(results.userAnswers);\n        UIRenderer.showResults();\n         // Update progress bar to 100% on results page\n         UIRenderer.updateProgressBar(TestManager.getQuestionCount(), TestManager.getQuestionCount());\n    }\n\n\n    // Handlers for file upload\n    function handleBrowseFilesClick() {\n        DOM.fileInput.click(); // Trigger the hidden file input\n    }\n\n    function handleFileInputChange(event) {\n        const files = event.target.files;\n        if (!files || files.length === 0) return;\n        // Pass the file list and a callback to FileHandler\n        FileHandler.handleFileSelection(files, updateFilterDropdownsAndStats); // Callback updates stats after processing\n        DOM.fileInput.value = ''; // Clear input so same file can be selected again\n    }\n\n    function handleFileUploadDragOver(event) {\n        event.preventDefault();\n        DOM.fileUpload.classList.add(CSS_CLASSES.DRAG_OVER);\n    }\n\n    function handleFileUploadDragLeave() {\n        DOM.fileUpload.classList.remove(CSS_CLASSES.DRAG_OVER);\n    }\n\n    function handleFileUploadDrop(event) {\n        event.preventDefault();\n        DOM.fileUpload.classList.remove(CSS_CLASSES.DRAG_OVER);\n        const files = event.dataTransfer.files;\n        if (!files || files.length === 0) return;\n        // Pass the file list and a callback to FileHandler\n        FileHandler.handleFileSelection(files, updateFilterDropdownsAndStats); // Callback updates stats after processing\n    }\n\n    // Handlers for settings/danger zone\n    function handleDeleteQuestionsClick() {\n        if (confirm(\"Are you sure you want to delete ALL loaded questions? This action cannot be undone.\")) {\n            DataManager.deleteQuestions(); // Delete questions from storage and bank\n            updateFilterDropdownsAndStats(); // Update UI filters and stats\n            Utils.showSuccessMessage('All questions deleted.');\n        }\n    }\n\n    function handleResetBadgesClick() {\n        if (confirm(\"Are you sure you want to reset your badge progress? This will set your stars to zero and remove all earned badges.\")) {\n            Gamification.resetProgress(); // Reset gamification state\n            Utils.showSuccessMessage('Badge progress reset.');\n        }\n    }\n\n    // Handlers for filters\n    function handleFilterChange() {\n        // This handler is for subject and grade filters\n        // Changing these filters affects the available identifiers\n        // So, we need to re-populate the identifier filter options\n        // and then update the stats based on the new filter combination.\n        updateQuestionStats(); // This function will handle updating identifiers and stats\n    }\n\n    // Helper function to update filter dropdowns and stats together\n    function updateFilterDropdownsAndStats() {\n        const filterLists = DataManager.getFilterLists();\n        // Update subject and grade filters first\n        UIRenderer.updateFilterDropdowns(\n            filterLists.subjectList,\n            filterLists.gradeLevelList\n        );\n        // Then update stats, which will populate the identifier filter based on current subject/grade\n        updateQuestionStats();\n    }\n\n\n    // Function to update question stats display (called after file load, filter change, delete)\n    function updateQuestionStats() {\n        // Get current filter values from the UI\n        const selectedSubject = DOM.subjectFilter.value;\n        const selectedGrade = DOM.gradeFilter.value;\n        const selectedIdentifier = DOM.identifierFilter.value; // Get this value *before* updating identifier options\n\n        // Get data from DataManager\n        const totalQuestionsInBank = DataManager.getQuestionCount();\n        const matchingQuestions = DataManager.filterQuestions(selectedSubject, selectedGrade, selectedIdentifier); // Filter by all three\n        const matchingQuestionsCount = matchingQuestions.length;\n        const filterLists = DataManager.getFilterLists(); // Get master lists for subjects/grades\n\n         // Get the list of identifiers *available* under the current subject and grade filters\n         const availableIdentifiersForSubjectGrade = DataManager.filterQuestions(selectedSubject, selectedGrade, Utils.FILTER_VALUES.ALL)\n             .map(q => q.filenameData.identifier || Utils.FILTER_VALUES.UNKNOWN);\n         const uniqueAvailableIdentifiers = new Set(availableIdentifiersForSubjectGrade);\n\n\n        // Get the selected test length\n        const minTestLength = parseInt(DOM.testLengthSelect.value);\n\n\n        // Update the UI display via UIRenderer\n        UIRenderer.updateQuestionStats(\n            totalQuestionsInBank,\n            matchingQuestionsCount,\n            filterLists.subjectList, // Pass master lists for subjects/grades\n            filterLists.gradeLevelList,\n            uniqueAvailableIdentifiers, // Pass the list of relevant identifiers for populating the dropdown\n            minTestLength\n        );\n    }\n\n    // Handler for option selection (delegated)\n    function handleOptionsContainerClick(event) {\n         const target = event.target;\n         const container = DOM.optionsContainer;\n\n         // Check if it's an option element and not disabled\n         if (target.classList.contains(CSS_CLASSES.OPTION) && !target.classList.contains(CSS_CLASSES.DISABLED)) {\n             const questionType = container.dataset.type;\n\n             // Only allow selection if the question hasn't been answered yet\n             if (!TestManager.isQuestionAnswered()) {\n                 if (questionType === QUESTION_TYPES.SINGLE) {\n                     // Single choice: deselect others, select this one\n                     container.querySelectorAll(`.${CSS_CLASSES.OPTION}`).forEach(opt => opt.classList.remove(CSS_CLASSES.SELECTED));\n                     target.classList.add(CSS_CLASSES.SELECTED);\n                 } else if (questionType === QUESTION_TYPES.MULTI_SELECT) {\n                     // Multi-select: toggle selection\n                     target.classList.toggle(CSS_CLASSES.SELECTED);\n                 }\n                 // Note: Ordering clicks are handled by touch/drag listeners directly attached by UIRenderer\n             }\n         }\n    }\n\n\n    // Public API\n    return {\n        bindEventListeners, // Called by App.js\n        updateQuestionStats, // Called by App.js (initial load) and FileHandler.js (after file processing)\n        updateFilterDropdownsAndStats // Called by handleNewTestClick, expose if needed elsewhere\n    };\n})(Utils, UIRenderer, DataManager, TestManager, Gamification, FileHandler); // Pass all dependencies\n",
+      "start_lineno": 1,
+      "end_lineno": 300
+    },
+    "js/fileHandler.js": {
+      "path": "js/fileHandler.js",
+      "type": "js",
+      "full_content": "// js/fileHandler.js\n\nconst FileHandler = (function(Utils, DataManager) {\n    // Handles reading and processing JSON files\n\n    // Access constants from Utils\n    const QUESTION_TYPES = Utils.QUESTION_TYPES;\n    const FILTER_VALUES = Utils.FILTER_VALUES;\n    const showSuccessMessage = Utils.showSuccessMessage;\n    const showWarningMessage = Utils.showWarningMessage;\n    const showErrorMessage = Utils.showErrorMessage;\n\n    // DataManager is passed as an argument\n    // EventHandlers is not directly accessed here; a callback is used.\n\n\n    function parseFilename(fname) {\n        // Re-implement or call DataManager's parseFilename\n         return DataManager.parseFilename(fname); // Use the function from DataManager\n    }\n\n    // Accept a callback function to be executed after files are processed\n    function handleFileSelection(fileList, callback) {\n        if (!fileList || fileList.length === 0) {\n            if (callback) callback(); // Call callback even if no files\n            return;\n        }\n\n        // Convert FileList to Array\n        const files = Array.from(fileList);\n        let filesProcessed = 0; // Counter for tracking when all files are done\n\n        const processFile = (file) => {\n             if (!file.name.toLowerCase().endsWith('.json')) {\n                 showWarningMessage(`Skipping file \"${file.name}\": Not a JSON file.`);\n                 filesProcessed++;\n                 if (filesProcessed === files.length && callback) callback();\n                 return;\n             }\n\n             const reader = new FileReader();\n\n             reader.addEventListener('load', evt => {\n                 try {\n                     const content = JSON.parse(evt.target.result);\n                     // Ensure content is treated as an array of questions\n                     const arr = Array.isArray(content) ? content : [content];\n                     const meta = parseFilename(file.name);\n\n                     const newQs = arr.map((q, i) => {\n                         // Basic validation for required fields\n                         if (!q.Question || q.answer === undefined || q.answer === null) {\n                             console.warn(`Skipping item ${i} in \"${file.name}\": Missing \"Question\" or \"answer\" field.`);\n                             return null; // Skip this item\n                         }\n\n                         // Determine question type\n                         const type = q.type || (q.Options ? (Array.isArray(q.answer) ? QUESTION_TYPES.MULTI_SELECT : QUESTION_TYPES.SINGLE) : QUESTION_TYPES.FILL_IN);\n\n                         // Validate options for option-based types\n                         if ((type === QUESTION_TYPES.SINGLE || type === QUESTION_TYPES.MULTI_SELECT || type === QUESTION_TYPES.ORDERING) && (!q.Options || !Array.isArray(q.Options) || q.Options.length === 0)) {\n                             console.warn(`Skipping item ${i} in \"${file.name}\": Type \"${type}\" but missing or empty \"Options\" array.`);\n                             return null; // Skip this item\n                         }\n\n                         // Construct the question object\n                         return {\n                             question: q.Question,\n                             options: q.Options, // Will be undefined for fill-in\n                             answer: q.answer,\n                             rationale: q.Rationale || \"No rationale provided.\",\n                             hint: q.hint || \"\",\n                             type: type,\n                             filenameData: meta,\n                             questionId: `${file.name}_${i}` // Generate a unique ID based on file and index\n                         };\n                     }).filter(q => q !== null); // Filter out any null entries from validation failures\n\n                     // Add valid questions to the DataManager and update UI\n                     const addedCount = DataManager.addQuestionsAndUpdateFilters(newQs);\n\n                     if (addedCount > 0) {\n                         showSuccessMessage(`Successfully loaded ${addedCount} new questions from \"${file.name}\".`);\n                     } else if (newQs.length > 0) {\n                         // If newQs had items but none were added, they must have been duplicates\n                          showWarningMessage(`No *new* questions added from \"${file.name}\" (might be duplicates).`);\n                     } else {\n                          // If newQs was empty after filtering, no valid questions were found in the file\n                          showWarningMessage(`No valid questions found in \"${file.name}\".`);\n                     }\n\n                 } catch (err) {\n                     showErrorMessage(`Error processing file \"${file.name}\": ${err.message}`);\n                     console.error(`Error processing file \"${file.name}\":`, err);\n                 } finally {\n                      filesProcessed++;\n                      // Call the callback when this file is done processing\n                      if (filesProcessed === files.length && callback) {\n                          callback();\n                      }\n                 }\n             });\n\n             reader.addEventListener('error', () => {\n                 showErrorMessage(`Error reading file \"${file.name}\".`);\n                 console.error(`Error reading file \"${file.name}\".`);\n                  filesProcessed++;\n                  // Call the callback on error too\n                  if (filesProcessed === files.length && callback) {\n                      callback();\n                  }\n             });\n\n             // Start reading the file\n             reader.readAsText(file);\n        };\n\n        // Process each file\n        files.forEach(file => processFile(file));\n\n    }\n\n\n    // Public API\n    return {\n        handleFileSelection // Called by EventHandlers, takes files and a callback\n    };\n})(Utils, DataManager); // Pass Utils and DataManager as arguments\n",
+      "start_lineno": 1,
+      "end_lineno": 128
+    },
+    "js/gamification.js": {
+      "path": "js/gamification.js",
+      "type": "js",
+      "full_content": "// js/gamification.js\n\nconst Gamification = (function(Utils) {\n    // --------------- VARIABLES ---------------\n    let unlockedBadges = new Set();\n    let updateStarCountUI = null; // Placeholder for UIRenderer function\n    let renderBadgesUI = null; // Placeholder for UIRenderer function\n\n\n    // Access constants from Utils\n    const LOCAL_STORAGE_KEYS = Utils.LOCAL_STORAGE_KEYS;\n    const BADGE_THRESHOLDS = Utils.BADGE_THRESHOLDS;\n    const BADGE_INFO = Utils.BADGE_INFO;\n    const CSS_CLASSES = Utils.CSS_CLASSES;\n    // We no longer directly access DOM elements here, delegate to UIRenderer via passed functions\n\n\n    // --------------- INITIALIZATION (Called by App.js) ---------------\n    function init(uiUpdateStarCount, uiRenderBadges) {\n         updateStarCountUI = uiUpdateStarCount;\n         renderBadgesUI = uiRenderBadges;\n         loadGamificationData();\n    }\n\n\n    // --------------- GAMIFICATION LOGIC ---------------\n\n    function loadGamificationData() {\n        // Load stars\n        const savedStars = parseInt(localStorage.getItem(LOCAL_STORAGE_KEYS.STAR_COUNT) || '0');\n        if (updateStarCountUI) updateStarCountUI(savedStars); // Update UI immediately\n\n        // Load badges\n        const savedBadges = localStorage.getItem(LOCAL_STORAGE_KEYS.BADGES);\n        if (savedBadges) {\n            try {\n                const parsedBadges = JSON.parse(savedBadges);\n                if (Array.isArray(parsedBadges)) {\n                    unlockedBadges = new Set(parsedBadges);\n                     console.log(`Loaded ${unlockedBadges.size} badges from local storage.`);\n                } else {\n                     Utils.showWarningMessage(\"Local storage badges format is unexpected. Clearing badges.\");\n                     console.warn(\"Local storage badges format is unexpected or old HTML. Clearing badges.\");\n                     unlockedBadges = new Set(); // Reset badges\n                     localStorage.removeItem(LOCAL_STORAGE_KEYS.BADGES); // Clear the bad entry\n                }\n            } catch (e) {\n                Utils.showErrorMessage('Error parsing local storage badges. Assuming old format and clearing.');\n                console.error('Error parsing local storage badges as JSON. Assuming old format and clearing.', e);\n                unlockedBadges = new Set(); // Reset badges\n                localStorage.removeItem(LOCAL_STORAGE_KEYS.BADGES); // Clear the bad entry\n            }\n        } else {\n            unlockedBadges = new Set(); // No saved badges\n             console.log(\"No badges found in local storage.\");\n        }\n\n        renderBadges(); // Render badges based on loaded state\n        maybeUnlockBadge(); // Check if any new badges are unlocked based on loaded stars (e.g., if threshold was lowered)\n    }\n\n    function saveGamificationData() {\n        try {\n             // Get current star count from the UI element using the provided update function\n             const currentStars = parseInt(document.getElementById('star-count').textContent || '0'); // Direct DOM access is okay here as it's the source of truth for UI state\n            localStorage.setItem(LOCAL_STORAGE_KEYS.STAR_COUNT, currentStars);\n            localStorage.setItem(LOCAL_STORAGE_KEYS.BADGES, JSON.stringify(Array.from(unlockedBadges)));\n             console.log(\"Gamification data saved.\");\n        } catch (e) {\n             Utils.showErrorMessage('Error saving gamification data.');\n            console.error('Error saving gamification data', e);\n        }\n    }\n\n    function incrementStars(n) {\n         const starSpan = document.getElementById('star-count'); // Direct DOM access\n         if (!starSpan) return;\n\n        let val = parseInt(starSpan.textContent || '0');\n        val += n;\n        if (updateStarCountUI) updateStarCountUI(val); // Update UI via passed function\n        starSpan.classList.add(CSS_CLASSES.PULSE); // Add animation class directly\n        setTimeout(() => starSpan.classList.remove(CSS_CLASSES.PULSE), 1000); // Remove after animation\n        saveGamificationData(); // Save the updated star count\n        maybeUnlockBadge(); // Check if a new badge is unlocked\n    }\n\n    function maybeUnlockBadge() {\n        const currentStars = parseInt(document.getElementById('star-count').textContent || '0'); // Direct DOM access is okay\n\n        let badgesUnlockedThisCheck = false;\n\n        // Iterate through badge thresholds\n        Object.entries(BADGE_THRESHOLDS).forEach(([key, threshold]) => {\n            const badgeInfo = BADGE_INFO[threshold];\n            // Check if threshold is met and badge is not already unlocked\n            if (currentStars >= threshold && badgeInfo && !unlockedBadges.has(badgeInfo.type)) {\n                unlockedBadges.add(badgeInfo.type);\n                badgesUnlockedThisCheck = true;\n                console.log(`Badge Unlocked: ${badgeInfo.text}!`);\n                // Optional: Add a visual notification for the user\n            }\n        });\n\n        if (badgesUnlockedThisCheck) {\n            renderBadges(); // Re-render the badge display\n            saveGamificationData(); // Save the new badge state\n        }\n    }\n\n    function renderBadges() {\n        // Get badge info for unlocked types, sort by threshold\n        const badgeThresholds = Object.values(BADGE_THRESHOLDS).sort((a, b) => a - b); // Ensure thresholds are sorted numerically\n        const badgesToRender = Array.from(unlockedBadges)\n            .map(type => Object.values(BADGE_INFO).find(info => info.type === type))\n            .filter(info => info) // Filter out any types not found in BADGE_INFO (shouldn't happen if keys are correct)\n            .sort((a, b) => {\n                // Find the numerical threshold for sorting\n                const thresholdA = Object.keys(BADGE_THRESHOLDS).find(key => BADGE_INFO[BADGE_THRESHOLDS[key]].type === a.type);\n                const thresholdB = Object.keys(BADGE_THRESHOLDS).find(key => BADGE_INFO[BADGE_THRESHOLDS[key]].type === b.type);\n                return BADGE_THRESHOLDS[thresholdA] - BADGE_THRESHOLDS[thresholdB];\n            });\n\n        if (renderBadgesUI) renderBadgesUI(badgesToRender); // Delegate rendering to UIRenderer via passed function\n    }\n\n    function resetProgress() {\n        // Reset in-memory state\n        if (updateStarCountUI) updateStarCountUI(0); // Reset star count UI via passed function\n        unlockedBadges = new Set(); // Clear the set of unlocked badges\n\n        // Update UI\n        renderBadges(); // Render the now empty badge container\n\n        // Save to local storage\n        saveGamificationData(); // Save the reset state\n    }\n\n\n    // Public API\n    return {\n        init, // New init function called by App.js\n        incrementStars, // Called by EventHandlers on correct answer\n        resetProgress, // Called by EventHandlers (Danger Zone)\n        // renderBadges is now called internally or via init\n    };\n})(Utils); // Pass Utils as an argument\n",
+      "start_lineno": 1,
+      "end_lineno": 147
+    },
+    "js/testManager.js": {
+      "path": "js/testManager.js",
+      "type": "js",
+      "full_content": "// js/testManager.js\n\nconst TestManager = (function(Utils) {\n    // --------------- VARIABLES ---------------\n    let currentTest = [];\n    let currentQuestionIndex = 0;\n    let userAnswers = []; // Stores objects like { question: {}, userAnswer: any, correct: boolean }\n    let userScore = 0;\n\n     // Access constants and utilities from Utils\n     const QUESTION_TYPES = Utils.QUESTION_TYPES;\n     const arraysAreEqual = Utils.arraysAreEqual;\n     const shuffle = Utils.shuffle;\n     const showWarningMessage = Utils.showWarningMessage;\n\n    // --------------- TEST LOGIC ---------------\n    function startNewTest(questions, length) {\n        if (!questions || questions.length === 0) {\n            showWarningMessage(\"No questions available for the test.\");\n            return false; // Indicate test could not start\n        }\n        if (questions.length < length) {\n             showWarningMessage(\"Not enough questions matching your filters for the selected test length.\");\n             return false; // Indicate test could not start\n        }\n\n        // Select and shuffle questions\n        currentTest = shuffle([...questions]).slice(0, length); // Use a copy of the array\n        userAnswers = new Array(currentTest.length).fill(null);\n        userScore = 0;\n        currentQuestionIndex = 0;\n\n        console.log(`Starting new test with ${currentTest.length} questions.`);\n        return true; // Indicate test started successfully\n    }\n\n    function getCurrentQuestion() {\n        if (currentQuestionIndex >= 0 && currentQuestionIndex < currentTest.length) {\n            return currentTest[currentQuestionIndex];\n        }\n        return null;\n    }\n\n    function getUserAnswerForCurrentQuestion() {\n        if (currentQuestionIndex >= 0 && currentQuestionIndex < userAnswers.length) {\n            return userAnswers[currentQuestionIndex];\n        }\n        return null;\n    }\n\n     // Check if an answer was actually provided (relevant for non-ordering types)\n     function isAnswerProvided(userAnswer, questionType) {\n         if ((userAnswer === null || userAnswer === undefined || userAnswer === \"\") && questionType !== QUESTION_TYPES.ORDERING && questionType !== QUESTION_TYPES.MULTI_SELECT) {\n             return false;\n         }\n         if (Array.isArray(userAnswer) && userAnswer.length === 0 && questionType !== QUESTION_TYPES.ORDERING && questionType !== QUESTION_TYPES.MULTI_SELECT) {\n             return false;\n         }\n         return true;\n     }\n\n\n    function submitAnswer(userAnswer) {\n        // Prevent submitting if already answered\n        if (userAnswers[currentQuestionIndex] !== null) {\n             console.warn(\"Attempted to submit answer for already answered question.\");\n            return { success: false, correct: false, alreadyAnswered: true };\n        }\n\n        const currentQuestion = getCurrentQuestion();\n         const questionType = currentQuestion.type || Utils.QUESTION_TYPES.SINGLE;\n\n         // Check if an answer was actually provided (relevant for non-ordering types)\n         if (!isAnswerProvided(userAnswer, questionType)) {\n             showWarningMessage(\"Please provide an answer before submitting.\");\n             return { success: false, correct: false, noAnswer: true };\n         }\n\n\n        const correct = isCorrect(currentQuestion, userAnswer);\n\n        // Store the answer and its correctness\n        userAnswers[currentQuestionIndex] = {\n            question: currentQuestion,\n            userAnswer: userAnswer,\n            correct: correct\n        };\n\n        // Update score if correct\n        if (correct) {\n            userScore++;\n        }\n\n        console.log(`Answer submitted for question ${currentQuestionIndex + 1}. Correct: ${correct}`);\n\n        return { success: true, correct: correct };\n    }\n\n     function isCorrect(question, userAnswer) {\n         // This logic was previously in the main script, now moved here\n         const correctAnswer = question.answer;\n         const questionType = question.type || Utils.QUESTION_TYPES.SINGLE;\n\n         // isAnswerProvided check already happened in submitAnswer, but good to be defensive\n          if (!isAnswerProvided(userAnswer, questionType)) {\n              return false;\n          }\n\n         switch (questionType) {\n             case QUESTION_TYPES.FILL_IN:\n                 const cleanUser = String(userAnswer).trim().replace(/[, ]/g, \"\");\n                 const cleanCorrect = String(correctAnswer).trim().replace(/[, ]/g, \"\");\n\n                 const userNum = parseFloat(cleanUser);\n                 const correctNum = parseFloat(cleanCorrect);\n\n                 // Compare numbers if both are valid, otherwise compare strings case-insensitively\n                 if (!isNaN(userNum) && !isNaN(correctNum)) {\n                     return Math.abs(userNum - correctNum) < 1e-9; // Use a small tolerance for floating point comparison\n                 } else {\n                     return cleanUser.toLowerCase() === cleanCorrect.toLowerCase();\n                 }\n\n             case QUESTION_TYPES.MULTI_SELECT:\n                 const correctAnswersArray = Array.isArray(correctAnswer) ? correctAnswer.map(String) : [String(correctAnswer)];\n                 const userAnswersArray = Array.isArray(userAnswer) ? userAnswer.map(String) : [];\n\n                 if (correctAnswersArray.length !== userAnswersArray.length) return false;\n\n                 // Need sorted copies for comparison\n                 const sortedCorrect = [...correctAnswersArray].sort();\n                 const sortedUser = [...userAnswersArray].sort();\n\n                 return arraysAreEqual(sortedCorrect, sortedUser);\n\n             case QUESTION_TYPES.ORDERING:\n                 const correctOrderArray = Array.isArray(correctAnswer) ? correctAnswer.map(String) : [];\n                 const userOrderArray = Array.isArray(userAnswer) ? userAnswer.map(String) : [];\n\n                 return arraysAreEqual(userOrderArray, correctOrderArray);\n\n             default: // Single choice\n                 return String(userAnswer) === String(correctAnswer);\n         }\n     }\n\n\n    function showNextQuestion() {\n        if (currentQuestionIndex < currentTest.length - 1) {\n            currentQuestionIndex++;\n            console.log(`Moving to question ${currentQuestionIndex + 1}`);\n            return currentTest[currentQuestionIndex];\n        }\n        return null; // Indicates end of test\n    }\n\n    function showPreviousQuestion() {\n        if (currentQuestionIndex > 0) {\n            currentQuestionIndex--;\n             console.log(`Moving to previous question ${currentQuestionIndex + 1}`);\n            return currentTest[currentQuestionIndex];\n        }\n        return null; // Indicates already at the first question\n    }\n\n    function isTestFinished() {\n        // A test is finished when the last question has been answered\n        return currentTest.length > 0 && currentQuestionIndex === currentTest.length - 1 && userAnswers[currentQuestionIndex] !== null;\n    }\n\n     function resetTestState() {\n         currentTest = [];\n         currentQuestionIndex = 0;\n         userAnswers = [];\n         userScore = 0;\n         console.log(\"Test state reset.\");\n     }\n\n     function getCurrentTestResults() {\n         const correctCount = userAnswers.filter(a => a && a.correct).length;\n         const totalQuestions = currentTest.length;\n         const finalPercentage = totalQuestions > 0 ? (correctCount / totalQuestions) * 100 : 0;\n\n         return {\n             score: finalPercentage,\n             correctCount: correctCount,\n             totalQuestions: totalQuestions,\n             userAnswers: [...userAnswers] // Return a copy\n         };\n     }\n\n     function getQuestionCount() {\n         return currentTest.length;\n     }\n\n     function getCurrentQuestionIndex() {\n         return currentQuestionIndex;\n     }\n\n     function isQuestionAnswered(index) {\n         const idx = index !== undefined ? index : currentQuestionIndex;\n         return userAnswers[idx] !== null;\n     }\n\n     function isFirstQuestion() {\n         return currentQuestionIndex === 0;\n     }\n\n     function isLastQuestion() {\n         return currentQuestionIndex === currentTest.length - 1;\n     }\n\n\n    // Public API\n    return {\n        startNewTest,\n        getCurrentQuestion,\n        getUserAnswerForCurrentQuestion,\n        submitAnswer,\n        showNextQuestion,\n        showPreviousQuestion,\n        isTestFinished,\n        resetTestState,\n        getCurrentTestResults,\n        getQuestionCount,\n        getCurrentQuestionIndex,\n        isQuestionAnswered,\n        isFirstQuestion,\n        isLastQuestion,\n        isCorrect // Expose for UI rendering feedback\n    };\n})(Utils); // Pass Utils as an argument\n",
+      "start_lineno": 1,
+      "end_lineno": 232
+    },
+    "js/uiRenderer.js": {
+      "path": "js/uiRenderer.js",
+      "type": "js",
+      "full_content": "// js/uiRenderer.js\n\nconst UIRenderer = (function(Utils, TestManager) {\n    // --------------- DOM ELEMENTS ---------------\n    const DOM = {\n        subjectFilter: document.getElementById('subject-filter'),\n        gradeFilter: document.getElementById('grade-filter'),\n        identifierFilter: document.getElementById('identifier-filter'),\n        testLengthSelect: document.getElementById('test-length'),\n        startTestBtn: document.getElementById('start-test'),\n        testContainer: document.querySelector('.test-container'),\n        questionText: document.getElementById('question-text'),\n        optionsContainer: document.getElementById('options-container'),\n        prevQuestionBtn: document.getElementById('prev-question'),\n        nextQuestionBtn: document.getElementById('next-question'),\n        submitAnswerBtn: document.getElementById('submit-answer'),\n        resultsContainer: document.querySelector('.results'),\n        finalScoreSpan: document.getElementById('final-score'),\n        feedbackContainer: document.getElementById('feedback-container'),\n        newTestBtn: document.getElementById('new-test'),\n        fileUpload: document.getElementById('file-upload'),\n        browseFilesBtn: document.getElementById('browse-files'),\n        fileInput: document.getElementById('file-input'),\n        questionStats: document.getElementById('question-stats'),\n        deleteQuestionsBtn: document.getElementById('delete-questions'),\n        resetBadgesBtn: document.getElementById('reset-badges'),\n        progressBar: document.getElementById('progress-bar'), // Gamification progress bar\n        starCountSpan: document.getElementById('star-count'), // Star count display\n        badgeContainer: document.getElementById('badge-container'), // Badge container\n        header: document.getElementById('header'),\n        mainTitle: document.getElementById('main-title'),\n        mainSubtitle: document.getElementById('main-subtitle'),\n        hintIcon: document.getElementById('hint-icon'),\n        questionArea: document.querySelector('.question-area'), // Container for question text and hint\n        orderingInstructions: document.getElementById('ordering-instructions'), // Instructions for ordering/multi-select\n        currentQuestionSpan: document.getElementById('current-question'), // Current question number in test progress\n        totalQuestionsSpan: document.getElementById('total-questions'), // Total questions in test progress\n        testProgressDiv: document.querySelector('.test-container .progress'), // The progress display div\n    };\n\n    // Access constants from Utils\n    const FILTER_VALUES = Utils.FILTER_VALUES;\n    const QUESTION_TYPES = Utils.QUESTION_TYPES;\n    const CSS_CLASSES = Utils.CSS_CLASSES;\n\n    // Variables for Touch Drag (UI state specific)\n    let touchDraggedElement = null;\n    let touchDragOffset = { x: 0, y: 0 };\n    let initialOptionRects = []; // Store initial bounding boxes of options for touch move\n\n\n    // --------------- UI RENDERING AND STATE UPDATES ---------------\n\n    function updateFilterDropdowns(subjectList, gradeLevelList) {\n        // Update Subject Filter\n        const currentSubjectVal = DOM.subjectFilter.value;\n        DOM.subjectFilter.innerHTML = `<option value=\"${FILTER_VALUES.ALL}\">All Subjects</option>`;\n        Array.from(subjectList).sort().forEach(subject => {\n            const opt = new Option(subject.charAt(0).toUpperCase() + subject.slice(1), subject);\n            DOM.subjectFilter.appendChild(opt);\n        });\n        DOM.subjectFilter.value = subjectList.has(currentSubjectVal) ? currentSubjectVal : FILTER_VALUES.ALL;\n\n        // Update Grade Filter\n        const currentGradeVal = DOM.gradeFilter.value;\n        DOM.gradeFilter.innerHTML = `<option value=\"${FILTER_VALUES.ALL}\">All Levels</option>`;\n        const gradeOptions = Array.from(gradeLevelList)\n            .map(g => ({\n                value: g,\n                text: isNaN(parseInt(g)) ? (g === FILTER_VALUES.UNKNOWN ? 'Unknown Grade' : g) : `Grade ${g}`,\n                isNum: !isNaN(parseInt(g))\n            }))\n            .sort((a, b) => a.isNum === b.isNum ? (a.isNum ? a.value - b.value : a.text.localeCompare(b.text)) : (b.isNum - a.isNum));\n\n        gradeOptions.forEach(g => {\n            const opt = new Option(g.text, g.value);\n            DOM.gradeFilter.appendChild(opt);\n        });\n        DOM.gradeFilter.value = gradeLevelList.has(currentGradeVal) ? currentGradeVal : FILTER_VALUES.ALL;\n\n        // Identifier filter options are updated in updateQuestionStats because they depend on selected subject/grade\n    }\n\n     // This function should be called whenever filters change or questions are loaded/deleted\n     function updateQuestionStats(totalQuestionsInBank, matchingQuestionsCount, subjectList, gradeLevelList, identifierListForCurrentFilters, minTestLength) {\n         if (totalQuestionsInBank === 0) {\n             DOM.questionStats.innerHTML = 'No questions loaded. Add question files to begin.';\n             DOM.startTestBtn.disabled = true;\n             DOM.deleteQuestionsBtn.disabled = true;\n             // Also clear identifier filter options if no questions exist\n             DOM.identifierFilter.innerHTML = `<option value=\"${FILTER_VALUES.ALL}\">All Question Sets</option>`;\n             return;\n         }\n\n         DOM.deleteQuestionsBtn.disabled = false;\n\n         // Update Identifier Filter options based on the current subject/grade filters\n         const currentIdentifierVal = DOM.identifierFilter.value;\n         DOM.identifierFilter.innerHTML = `<option value=\"${FILTER_VALUES.ALL}\">All Question Sets</option>`;\n         // Sort identifiers alphabetically, putting UNKNOWN last\n         const sortedIdentifiers = Array.from(identifierListForCurrentFilters).sort((a, b) => {\n             if (a === FILTER_VALUES.UNKNOWN) return 1;\n             if (b === FILTER_VALUES.UNKNOWN) return -1;\n             return a.localeCompare(b);\n         });\n         sortedIdentifiers.forEach(id => {\n             const opt = new Option(id === FILTER_VALUES.UNKNOWN ? 'Unnamed Set' : id, id);\n             DOM.identifierFilter.appendChild(opt);\n         });\n         // Restore the previous value if it still exists in the new list, otherwise default to ALL\n         const identifierOptions = Array.from(DOM.identifierFilter.options).map(opt => opt.value);\n         DOM.identifierFilter.value = identifierOptions.includes(currentIdentifierVal) ? currentIdentifierVal : FILTER_VALUES.ALL;\n\n\n         const subs = Array.from(subjectList).join(', ') || 'None';\n         // Sort grades numerically where possible, then alphabetically\n         const sortedGrades = Array.from(gradeLevelList).sort((a, b) => {\n             const numA = parseInt(a);\n             const numB = parseInt(b);\n             if (!isNaN(numA) && !isNaN(numB)) return numA - numB;\n             if (a === FILTER_VALUES.UNKNOWN) return 1;\n             if (b === FILTER_VALUES.UNKNOWN) return -1;\n             return a.localeCompare(b);\n         });\n         const grades = sortedGrades.map(g => isNaN(parseInt(g)) ? (g === FILTER_VALUES.UNKNOWN ? 'Unknown Grade' : g) : `Grade ${g}`).join(', ') || 'None';\n         const ids = sortedIdentifiers.map(id => id === FILTER_VALUES.UNKNOWN ? 'Unnamed Set' : id).join(', ') || 'None';\n\n\n         let statsHTML = `<strong>${totalQuestionsInBank}</strong> questions loaded.<br>\n    <strong>${matchingQuestionsCount}</strong> matching current filters.<br>\n    Subjects: ${subs}<br> Grades: ${grades}<br> Sets: ${ids}`;\n\n         DOM.startTestBtn.disabled = matchingQuestionsCount < minTestLength;\n         if (matchingQuestionsCount < minTestLength) {\n             statsHTML += `<br><span style=\"color:var(--danger);\">Not enough questions for selected test length.</span>`;\n         }\n         DOM.questionStats.innerHTML = statsHTML;\n     }\n\n\n    function showSettings() {\n        document.querySelector('.settings-panel').style.display = 'block';\n        DOM.testContainer.style.display = 'none';\n        DOM.resultsContainer.style.display = 'none';\n        if (DOM.mainTitle) DOM.mainTitle.style.display = 'block';\n        if (DOM.mainSubtitle) DOM.mainSubtitle.style.display = 'block';\n        if (DOM.header) DOM.header.style.display = 'block';\n        if (DOM.testProgressDiv) DOM.testProgressDiv.style.display = 'none';\n\n        // Remove any active drag/touch states from previous test\n        handleTouchCancel(); // Clean up touch drag if active\n\n        // Remove container drag listeners when leaving test view\n        // Check if listeners are added before removing\n         if (DOM.optionsContainer.dataset.mouseDragListenersAdded === 'true') {\n             DOM.optionsContainer.removeEventListener('dragover', handleMouseDragOver);\n             DOM.optionsContainer.removeEventListener('drop', handleMouseDrop);\n             delete DOM.optionsContainer.dataset.mouseDragListenersAdded; // Remove the flag\n         }\n        // Individual option listeners are removed when optionsContainer.innerHTML is cleared\n    }\n\n    function showTest(totalQuestions) {\n        document.querySelector('.settings-panel').style.display = 'none';\n        DOM.resultsContainer.style.display = 'none';\n        DOM.testContainer.style.display = 'block';\n        if (DOM.mainTitle) DOM.mainTitle.style.display = 'none';\n        if (DOM.mainSubtitle) DOM.mainSubtitle.style.display = 'none';\n        if (DOM.header) DOM.header.style.display = 'block'; // Keep header for gamification\n        if (DOM.testProgressDiv) DOM.testProgressDiv.style.display = 'flex';\n\n        DOM.totalQuestionsSpan.textContent = totalQuestions;\n    }\n\n    function showResults() {\n        DOM.testContainer.style.display = 'none';\n        document.querySelector('.settings-panel').style.display = 'none'; // Ensure settings is also hidden\n        DOM.resultsContainer.style.display = 'block';\n         // Decide what to show on results page - title/subtitle or just header\n         if (DOM.mainTitle) DOM.mainTitle.style.display = 'block'; // Show title again on results? Or keep header?\n         if (DOM.mainSubtitle) DOM.mainSubtitle.style.display = 'block'; // Show subtitle?\n         if (DOM.header) DOM.header.style.display = 'block'; // Keep header for gamification\n         if (DOM.testProgressDiv) DOM.testProgressDiv.style.display = 'none'; // Hide progress\n\n\n        // Remove any active drag/touch states from previous test\n        handleTouchCancel(); // Clean up touch drag if active\n\n        // Remove container drag listeners when leaving test view\n         if (DOM.optionsContainer.dataset.mouseDragListenersAdded === 'true') {\n             DOM.optionsContainer.removeEventListener('dragover', handleMouseDragOver);\n             DOM.optionsContainer.removeEventListener('drop', handleMouseDrop);\n             delete DOM.optionsContainer.dataset.mouseDragListenersAdded; // Remove the flag\n         }\n        // Individual option listeners are removed when optionsContainer.innerHTML is cleared\n    }\n\n\n    function displayQuestion(questionObject, userSavedAnswer, totalQuestions, currentIndex) {\n        if (!questionObject) {\n            console.error(\"displayQuestion called with invalid question object:\", questionObject);\n            Utils.showErrorMessage(\"An error occurred displaying the question.\");\n            DOM.submitAnswerBtn.disabled = true;\n            DOM.optionsContainer.innerHTML = ''; // Clear options\n            // Ensure all navigation buttons are disabled if question cannot render\n             DOM.prevQuestionBtn.disabled = true;\n             DOM.nextQuestionBtn.disabled = true;\n            return;\n        }\n\n        const questionType = questionObject.type || QUESTION_TYPES.SINGLE;\n        DOM.optionsContainer.dataset.type = questionType; // Store type on container\n\n        // Clear previous options and instructions\n        DOM.optionsContainer.innerHTML = '';\n        DOM.orderingInstructions.style.display = 'none';\n        DOM.orderingInstructions.textContent = '';\n\n        // Set question text and hint\n        DOM.questionText.innerHTML = questionObject.question || \"[No Question Text]\";\n        const hasValidHint = questionObject.hint && questionObject.hint.trim() !== \"\" && questionObject.hint.trim().toLowerCase() !== \"no hint available.\" && questionObject.hint.trim().toLowerCase() !== \"no hint.\";\n        DOM.hintIcon.style.display = hasValidHint ? 'inline-block' : 'none';\n        DOM.hintIcon.dataset.hint = hasValidHint ? questionObject.hint : \"\";\n\n        // Render options based on type\n        let renderSuccessful = false;\n        switch (questionType) {\n            case QUESTION_TYPES.SINGLE:\n                renderSuccessful = renderSingleChoiceOptions(questionObject, DOM.optionsContainer, userSavedAnswer);\n                DOM.orderingInstructions.textContent = 'Select the single correct answer.';\n                DOM.orderingInstructions.style.display = 'block';\n                break;\n            case QUESTION_TYPES.MULTI_SELECT:\n                renderSuccessful = renderMultiSelectOptions(questionObject, DOM.optionsContainer, userSavedAnswer);\n                 DOM.orderingInstructions.textContent = 'Select all options that apply.';\n                 DOM.orderingInstructions.style.display = 'block';\n                break;\n            case QUESTION_TYPES.FILL_IN:\n                renderSuccessful = renderFillInOptions(questionObject, DOM.optionsContainer, userSavedAnswer);\n                 DOM.orderingInstructions.textContent = 'Type your answer in the box.';\n                 DOM.orderingInstructions.style.display = 'block';\n                break;\n            case QUESTION_TYPES.ORDERING:\n                renderSuccessful = renderOrderingOptions(questionObject, DOM.optionsContainer, userSavedAnswer);\n                 DOM.orderingInstructions.textContent = 'Drag and drop the items to put them in the correct order.';\n                 DOM.orderingInstructions.style.display = 'block';\n                break;\n            default:\n                DOM.optionsContainer.innerHTML = `<p style=\"color:var(--danger);\">Error: Unknown question type \"${questionType}\".</p>`;\n                Utils.showErrorMessage(`Unknown question type: ${questionType}`);\n                renderSuccessful = false;\n        }\n\n        if (!renderSuccessful) {\n             DOM.submitAnswerBtn.disabled = true;\n             DOM.nextQuestionBtn.disabled = true;\n             DOM.prevQuestionBtn.disabled = true; // Disable navigation if question couldn't render\n             return;\n        }\n\n\n        // Update navigation buttons and progress display\n        DOM.prevQuestionBtn.disabled = currentIndex === 0;\n        DOM.nextQuestionBtn.textContent = currentIndex === totalQuestions - 1 ? \"Finish\" : \"Next\";\n        // DOM.currentQuestionSpan.textContent = currentIndex + 1; // Updated by updateProgressBar\n\n\n        // Apply feedback or enable interaction based on whether the question is answered\n        const isAnswered = userSavedAnswer !== null;\n        if (isAnswered) {\n            applyFeedbackStyles(questionObject, userSavedAnswer.userAnswer, userSavedAnswer.correct);\n            disableOptions();\n            DOM.submitAnswerBtn.style.display = 'none';\n            DOM.nextQuestionBtn.disabled = false;\n        } else {\n            enableOptions();\n            DOM.submitAnswerBtn.style.display = 'inline-block';\n            DOM.nextQuestionBtn.disabled = true; // Next is disabled until submitted\n        }\n    }\n\n    // Helper to create a basic option element\n    function createOptionElement(text, index) {\n        const optElement = document.createElement('div');\n        optElement.classList.add(CSS_CLASSES.OPTION); // Use constant\n        optElement.textContent = text;\n        optElement.dataset.index = index; // Store original index if needed\n        optElement.dataset.value = text; // Store value\n        return optElement;\n    }\n\n    // --------------- TYPE-SPECIFIC RENDERERS ---------------\n\n    function renderSingleChoiceOptions(q, container, userSavedAnswer) {\n        if (!q.options || !Array.isArray(q.options)) {\n            container.innerHTML = `<p style=\"color:var(--danger);\">Error: Options missing or invalid.</p>`;\n            return false;\n        }\n        q.options.forEach((option, index) => {\n            const optElement = createOptionElement(option, index);\n            // Event listener for selection is handled by delegated listener in eventHandlers.js\n            container.appendChild(optElement);\n        });\n        return true;\n    }\n\n    function renderFillInOptions(q, container, userSavedAnswer) {\n        // For fill-in, the answer is the input value, options array is not used\n        const inputElement = document.createElement('input');\n        inputElement.type = 'text';\n        inputElement.classList.add(CSS_CLASSES.FILL_IN_INPUT);\n        inputElement.placeholder = 'Enter your answer';\n        if (userSavedAnswer && userSavedAnswer.userAnswer !== null && userSavedAnswer.userAnswer !== undefined) {\n             inputElement.value = userSavedAnswer.userAnswer;\n        }\n        container.appendChild(inputElement);\n        return true;\n    }\n\n    function renderMultiSelectOptions(q, container, userSavedAnswer) {\n        if (!q.options || !Array.isArray(q.options)) {\n            container.innerHTML = `<p style=\"color:var(--danger);\">Error: Options missing or invalid.</p>`;\n            return false;\n        }\n        q.options.forEach((option, index) => {\n            const optElement = createOptionElement(option, index);\n             // Event listener for toggling is handled by delegated listener in eventHandlers.js\n            container.appendChild(optElement);\n        });\n        return true;\n    }\n\n    function renderOrderingOptions(q, container, userSavedAnswer) {\n        if (!q.options || !Array.isArray(q.options)) {\n            container.innerHTML = `<p style=\"color:var(--danger);\">Error: Options missing or invalid.</p>`;\n            return false;\n        }\n\n        let optionsToRender = [...q.options];\n\n        // If the question has been answered, render using the user's saved order\n        if (userSavedAnswer && userSavedAnswer.userAnswer && Array.isArray(userSavedAnswer.userAnswer)) {\n             optionsToRender = userSavedAnswer.userAnswer;\n             // Ensure all user's answers are actually valid options in the question\n             optionsToRender = optionsToRender.filter(userOpt => q.options.includes(userOpt));\n             // If user's answer is incomplete or contains invalid options, fall back to original options\n             if (optionsToRender.length !== q.options.length) {\n                  console.warn(\"User's saved ordering answer is incomplete or invalid, falling back to original options for rendering.\");\n                  optionsToRender = [...q.options]; // Use original options\n             }\n        } else {\n             // If not answered, shuffle the options for the initial display\n             optionsToRender = Utils.shuffle([...q.options]);\n        }\n\n\n        optionsToRender.forEach((optionText, index) => {\n            // Find the original option index if needed, but for rendering text content is enough\n            const optElement = createOptionElement(optionText, index); // Index here is the index in the *current* display order\n            optElement.classList.add(CSS_CLASSES.DRAGGABLE);\n            optElement.draggable = true; // Enable mouse drag\n\n            // Add Mouse Drag Listeners (bound directly to the element)\n            optElement.addEventListener('dragstart', handleMouseDragStart);\n            optElement.addEventListener('dragend', handleMouseDragEnd);\n\n            // Add Touch Drag Listeners (bound directly to the element)\n            optElement.addEventListener('touchstart', handleTouchStart);\n            optElement.addEventListener('touchmove', handleTouchMove);\n            optElement.addEventListener('touchend', handleTouchEnd);\n            optElement.addEventListener('touchcancel', handleTouchCancel); // Good practice\n\n            container.appendChild(optElement);\n        });\n\n        // Add container listeners for mouse dragover/drop (bound only once when ordering question is rendered)\n        // Check if listeners are already added before adding again\n        if (!container.dataset.mouseDragListenersAdded) {\n             container.addEventListener('dragover', handleMouseDragOver);\n             container.addEventListener('drop', handleMouseDrop);\n             container.dataset.mouseDragListenersAdded = 'true'; // Mark that listeners are added\n        }\n\n\n        return true;\n    }\n\n\n    // --------------- FEEDBACK AND STATE STYLES ---------------\n\n    function applyFeedbackStyles(question, userAnswer, correct) {\n        const questionType = question.type || QUESTION_TYPES.SINGLE;\n        const correctAnswer = question.answer;\n        const options = DOM.optionsContainer.children; // Get current children after potential reordering\n\n        // Remove previous feedback/selection styles from all options/inputs\n        Array.from(options).forEach(opt => {\n            opt.classList.remove(CSS_CLASSES.SELECTED, CSS_CLASSES.CORRECT, CSS_CLASSES.INCORRECT);\n             // Remove any extra feedback text added for fill-in (check by class)\n            if (opt.classList.contains('correct-answer') || opt.classList.contains('user-mistake')) {\n                 opt.remove();\n            }\n        });\n        const inputElement = DOM.optionsContainer.querySelector(`.${CSS_CLASSES.FILL_IN_INPUT}`);\n        if (inputElement) {\n             inputElement.classList.remove(CSS_CLASSES.CORRECT, CSS_CLASSES.INCORRECT);\n              // Remove any feedback text associated with fill-in input\n             const feedbackText = DOM.optionsContainer.querySelector('.correct-answer, .user-mistake');\n             if(feedbackText) feedbackText.remove();\n        }\n\n\n        if (questionType === QUESTION_TYPES.FILL_IN) {\n            if (inputElement) {\n                // Apply correct/incorrect styles to the input field\n                inputElement.classList.add(correct ? CSS_CLASSES.CORRECT : CSS_CLASSES.INCORRECT);\n                 // Optionally display the correct answer near the input for feedback if incorrect\n                 if (!correct) {\n                    const feedbackText = document.createElement('p');\n                    feedbackText.classList.add('correct-answer');\n                    feedbackText.textContent = `Correct Answer: ${correctAnswer}`;\n                    // Check if feedback already exists to avoid duplicates (redundant with clearing above, but safe)\n                    if (!DOM.optionsContainer.querySelector('.correct-answer')) {\n                         DOM.optionsContainer.appendChild(feedbackText);\n                    }\n                 }\n            }\n        } else { // Single, Multi-Select, Ordering\n             // Get correct answers and user answers as arrays of strings for easy comparison\n            const correctAnswersArray = Array.isArray(correctAnswer) ? correctAnswer.map(String) : (correctAnswer !== null && correctAnswer !== undefined ? [String(correctAnswer)] : []);\n            const userAnswersArray = Array.isArray(userAnswer) ? userAnswer.map(String) : (userAnswer !== null && userAnswer !== undefined ? [String(userAnswer)] : []);\n\n\n            Array.from(options).forEach(opt => {\n                // Only process actual option elements (not potential feedback text added for fill-in)\n                if (!opt.classList.contains(CSS_CLASSES.OPTION)) return;\n\n                const optionText = String(opt.textContent);\n\n                // Highlight correct options for ALL types (except fill-in handled above)\n                if (correctAnswersArray.includes(optionText)) {\n                    opt.classList.add(CSS_CLASSES.CORRECT);\n                }\n\n                // Highlight user's selection and incorrect choices (for Single/Multi-Select)\n                if (questionType !== QUESTION_TYPES.ORDERING) {\n                    const isUserAnswer = userAnswersArray.includes(optionText);\n                     if (isUserAnswer) {\n                         opt.classList.add(CSS_CLASSES.SELECTED); // Keep user selection highlighted\n                         // Highlight incorrect user selections\n                         if (!correctAnswersArray.includes(optionText)) {\n                            opt.classList.add(CSS_CLASSES.INCORRECT);\n                        }\n                     }\n                } else {\n                     // For Ordering questions, the correctness is based on the order.\n                     // Individual options are marked correct if they are part of the correct answer set,\n                     // but we don't mark individual options as \"incorrect\" based on the user's order.\n                     // The feedback shows the correct order vs user's order separately.\n                }\n            });\n\n             // For Ordering, if incorrect, might show the correct order visually?\n             // This could be complex. Simple text feedback might be sufficient.\n        }\n    }\n\n\n    function disableOptions() {\n        const questionType = DOM.optionsContainer.dataset.type;\n        if (questionType === QUESTION_TYPES.FILL_IN) {\n            const input = DOM.optionsContainer.querySelector(`.${CSS_CLASSES.FILL_IN_INPUT}`);\n            if (input) input.disabled = true;\n        } else {\n            Array.from(DOM.optionsContainer.children).forEach(opt => {\n                // Only disable actual option elements\n                if (!opt.classList.contains(CSS_CLASSES.OPTION)) return;\n\n                opt.style.pointerEvents = 'none'; // Disable click/touch\n                opt.classList.add(CSS_CLASSES.DISABLED);\n                // For mouse drag, explicitly disable\n                if (opt.classList.contains(CSS_CLASSES.DRAGGABLE)) opt.draggable = false;\n                // Touch handlers check for CSS_CLASSES.DISABLED internally if needed, but pointer-events: none is usually sufficient\n            });\n        }\n    }\n\n    function enableOptions() {\n        const questionType = DOM.optionsContainer.dataset.type;\n        if (questionType === QUESTION_TYPES.FILL_IN) {\n            const input = DOM.optionsContainer.querySelector(`.${CSS_CLASSES.FILL_IN_INPUT}`);\n            if (input) input.disabled = false;\n        } else {\n            Array.from(DOM.optionsContainer.children).forEach(opt => {\n                // Only enable actual option elements\n                 if (!opt.classList.contains(CSS_CLASSES.OPTION)) return;\n\n                opt.style.pointerEvents = 'auto'; // Enable click/touch\n                opt.classList.remove(CSS_CLASSES.DISABLED);\n                // For mouse drag, re-enable (only if it's a draggable type)\n                if (opt.classList.contains(CSS_CLASSES.DRAGGABLE)) opt.draggable = true;\n            });\n        }\n    }\n\n    function getUserAnswerFromUI(questionType) {\n        // Reads the user's answer directly from the state of the UI elements\n        const container = DOM.optionsContainer;\n\n        switch (questionType) {\n            case QUESTION_TYPES.SINGLE:\n                const selectedOption = container.querySelector(`.option.${CSS_CLASSES.SELECTED}`);\n                return selectedOption ? selectedOption.textContent : null;\n            case QUESTION_TYPES.FILL_IN:\n                const inputElement = container.querySelector(`.${CSS_CLASSES.FILL_IN_INPUT}`);\n                const inputValue = inputElement ? inputElement.value.trim() : null;\n                return inputValue === '' ? null : inputValue; // Return null if empty string after trim\n            case QUESTION_TYPES.MULTI_SELECT:\n                const selectedOptions = container.querySelectorAll(`.option.${CSS_CLASSES.SELECTED}`);\n                return Array.from(selectedOptions).map(opt => opt.textContent);\n            case QUESTION_TYPES.ORDERING:\n                // For ordering, the user's answer is the current order in the DOM\n                const orderedOptions = container.children;\n                // Filter to only include draggable options (to exclude potential feedback text or placeholders)\n                const orderedDraggableOptions = Array.from(orderedOptions).filter(opt => opt.classList.contains(CSS_CLASSES.DRAGGABLE));\n                return Array.from(orderedDraggableOptions).map(opt => opt.textContent);\n            default:\n                return null;\n        }\n    }\n\n\n     function displayFeedback(userAnswers) {\n         DOM.feedbackContainer.innerHTML = '';\n         userAnswers.forEach((answer, index) => {\n             if (!answer) return; // Skip questions that weren't answered\n\n             const item = document.createElement('div');\n             item.classList.add('feedback-item');\n\n             const questionText = document.createElement('p');\n             questionText.innerHTML = `<strong>Question ${index + 1}:</strong> ${answer.question.question}`;\n             item.appendChild(questionText);\n\n             const correctAnswerP = document.createElement('p');\n             correctAnswerP.classList.add('correct-answer');\n             const correctDisplay = Array.isArray(answer.question.answer) ? `[${answer.question.answer.join(', ')}]` : answer.question.answer;\n             correctAnswerP.innerHTML = `<strong>Correct Answer:</strong> ${correctDisplay}`;\n             item.appendChild(correctAnswerP);\n\n             // Only show \"Your Answer\" if it's different from the correct answer OR if it's an array type\n             // Use TestManager.isCorrect to compare the saved answer against the correct answer\n             const isUserAnswerDifferent = !TestManager.isCorrect(answer.question, answer.userAnswer);\n             const isArrayType = Array.isArray(answer.question.answer); // Ordering and Multi-select use arrays\n\n             if (isUserAnswerDifferent || isArrayType) {\n                 const userAnswerP = document.createElement('p');\n                 userAnswerP.classList.add(answer.correct ? 'correct-answer' : 'user-mistake');\n                 let userDisplay;\n                 if (Array.isArray(answer.userAnswer)) {\n                     userDisplay = answer.userAnswer.length > 0 ? `[${answer.userAnswer.join(', ')}]` : 'No answer provided';\n                 } else if (answer.userAnswer !== null && answer.userAnswer !== undefined && answer.userAnswer !== '') {\n                     userDisplay = answer.userAnswer;\n                 } else {\n                     userDisplay = 'No answer provided';\n                 }\n                 userAnswerP.innerHTML = `<strong>Your Answer:</strong> ${userDisplay}`;\n                 item.appendChild(userAnswerP);\n             }\n\n\n             const rationale = document.createElement('p');\n             rationale.innerHTML = `<strong>Rationale:</strong> ${answer.question.rationale || 'No rationale provided.'}`;\n             item.appendChild(rationale);\n\n             DOM.feedbackContainer.appendChild(item);\n         });\n     }\n\n\n     function updateScoreDisplay(scorePercentage) {\n         DOM.finalScoreSpan.textContent = scorePercentage.toFixed(0);\n     }\n\n     function updateProgressBar(current, total) {\n          const percentage = total > 0 ? (current / total) * 100 : 0;\n          DOM.progressBar.style.width = `${percentage}%`;\n          // Also update the current question number display\n          DOM.currentQuestionSpan.textContent = current; // current is 1-based count\n     }\n\n     function updateStarCount(count) {\n         DOM.starCountSpan.textContent = count;\n     }\n\n     function renderBadges(badges) {\n         DOM.badgeContainer.innerHTML = '';\n         badges.forEach(badgeInfo => {\n             const badgeElement = document.createElement('span');\n             badgeElement.classList.add('badge');\n             badgeElement.dataset.badgeType = badgeInfo.type;\n             badgeElement.innerHTML = `<i class=\"${badgeInfo.icon}\"></i> ${badgeInfo.text}`;\n             DOM.badgeContainer.appendChild(badgeElement);\n         });\n     }\n\n     // --------------- DRAG AND DROP (MOUSE & TOUCH) HANDLERS FOR ORDERING ---------------\n\n     // These handlers directly manipulate the UI (DOM) state for drag feedback and reordering.\n     // They are part of the UI rendering logic.\n\n     // Mouse Drag Handlers\n     function handleMouseDragStart(event) {\n          // Ensure we are on an ordering question and the target is draggable and enabled\n          if (DOM.optionsContainer.dataset.type !== QUESTION_TYPES.ORDERING) return;\n          const draggable = event.target.closest(`.${CSS_CLASSES.DRAGGABLE}`);\n          if (!draggable || draggable.classList.contains(CSS_CLASSES.DISABLED)) return;\n\n          draggable.classList.add(CSS_CLASSES.DRAGGING);\n          event.dataTransfer.setData('text/plain', null); // Necessary for Firefox\n          // console.log('Mouse drag start', draggable.textContent);\n     }\n\n     function handleMouseDragEnd(event) {\n          // Ensure we are on an ordering question and the target is draggable\n          if (DOM.optionsContainer.dataset.type !== QUESTION_TYPES.ORDERING) return;\n          const draggable = event.target.closest(`.${CSS_CLASSES.DRAGGABLE}`);\n          if (!draggable) return;\n          draggable.classList.remove(CSS_CLASSES.DRAGGING);\n          // console.log('Mouse drag end');\n     }\n\n     function handleMouseDragOver(e) {\n         // This should only apply if the container is for ordering\n         if (DOM.optionsContainer.dataset.type !== QUESTION_TYPES.ORDERING) return;\n\n         e.preventDefault(); // Necessary to allow dropping\n\n         // Add a visual indicator to the container when dragging over\n         DOM.optionsContainer.classList.add(CSS_CLASSES.DRAG_OVER);\n\n         const afterElement = getDragAfterElement(DOM.optionsContainer, e.clientY);\n         const draggable = DOM.optionsContainer.querySelector(`.${CSS_CLASSES.DRAGGING}`);\n\n         if (draggable) {\n             if (afterElement == null) {\n                 // Append to the end if no element is found after the drag position\n                 DOM.optionsContainer.appendChild(draggable);\n             } else {\n                 // Insert before the element found after the drag position\n                 DOM.optionsContainer.insertBefore(draggable, afterElement);\n             }\n         }\n          // console.log('Mouse drag over');\n     }\n\n      function handleMouseDrop(e) {\n          // This should only apply if the container is for ordering\n          if (DOM.optionsContainer.dataset.type !== QUESTION_TYPES.ORDERING) return;\n\n          e.preventDefault();\n          // The element was already moved in dragover, nothing more to do here for simple reordering\n\n          // Remove the visual indicator from the container\n          DOM.optionsContainer.classList.remove(CSS_CLASSES.DRAG_OVER);\n          // console.log('Mouse drop');\n      }\n\n     // Helper function for mouse dragover logic\n     function getDragAfterElement(container, y) {\n         // Get all draggable elements *except* the one currently being dragged\n         const draggableElements = [...container.querySelectorAll(`.${CSS_CLASSES.DRAGGABLE}:not(.${CSS_CLASSES.DRAGGING})`)];\n\n         // Use reduce to find the element that the dragged item should be inserted before\n         return draggableElements.reduce((closest, child) => {\n             const box = child.getBoundingClientRect();\n             // Calculate the offset from the center of the child element to the mouse Y position\n             const offset = y - box.top - box.height / 2;\n             // Find the element with the smallest negative offset (i.e., the first element below the mouse position)\n             if (offset < 0 && offset > closest.offset) {\n                 return {\n                     offset: offset,\n                     element: child\n                 };\n             } else {\n                 return closest;\n             }\n         }, {\n             offset: Number.NEGATIVE_INFINITY // Start with a very small offset\n         }).element; // Return the element found\n     }\n\n\n     // Touch Drag Handlers\n     function handleTouchStart(event) {\n         // Only handle if the container is for ordering\n          if (DOM.optionsContainer.dataset.type !== QUESTION_TYPES.ORDERING) return;\n\n         // Only handle the first touch point\n         if (event.touches.length !== 1) return;\n\n         const touchedElement = event.target.closest(`.${CSS_CLASSES.DRAGGABLE}`);\n         if (!touchedElement || touchedElement.classList.contains(CSS_CLASSES.DISABLED)) return; // Don't drag if disabled\n\n         // Prevent default scrolling/zooming\n         event.preventDefault();\n\n         touchDraggedElement = touchedElement;\n         touchDraggedElement.classList.add(CSS_CLASSES.DRAGGING);\n\n         // Get initial position and calculate offset\n         const rect = touchDraggedElement.getBoundingClientRect();\n         const touch = event.touches[0];\n         touchDragOffset = {\n             x: touch.clientX - rect.left,\n             y: touch.clientY - rect.top\n         };\n\n         // Store initial bounding boxes of all options *once* at the start of the drag\n         initialOptionRects = [];\n         Array.from(DOM.optionsContainer.children).forEach(opt => {\n              // Only consider draggable options\n              if (opt.classList.contains(CSS_CLASSES.DRAGGABLE)) {\n                 initialOptionRects.push({\n                     element: opt, // Store reference to the actual element\n                     rect: opt.getBoundingClientRect() // Store its initial dimensions/position\n                 });\n              }\n         });\n\n\n         // Set element to fixed position for dragging relative to viewport\n         touchDraggedElement.style.position = 'fixed';\n         touchDraggedElement.style.zIndex = 1000; // Bring to front\n         touchDraggedElement.style.width = `${rect.width}px`; // Maintain initial width\n\n\n         // Position element under finger considering the offset\n         touchDraggedElement.style.left = `${touch.clientX - touchDragOffset.x}px`;\n         touchDraggedElement.style.top = `${touch.clientY - touchDragOffset.y}px`;\n\n\n         // Optional: Add a placeholder to maintain space in the original list\n         // Placeholder logic is commented out for simplicity but can be added\n         // console.log('Touch drag start', touchDraggedElement.textContent);\n     }\n\n     function handleTouchMove(event) {\n         // Only handle if a drag is in progress and it's the first touch\n         if (!touchDraggedElement || event.touches.length !== 1) return;\n\n         event.preventDefault(); // Prevent scrolling\n\n         const touch = event.touches[0];\n\n         // Update element position based on current touch location and initial offset\n         touchDraggedElement.style.left = `${touch.clientX - touchDragOffset.x}px`;\n         touchDraggedElement.style.top = `${touch.clientY - touchDragOffset.y}px`;\n\n         // Determine potential drop target based on touch Y position and *initial* rects\n         let insertBeforeElement = null; // Element to insert before, or null to append\n\n         // Find the element whose *initial* bounding box the touch Y is currently over\n         // We iterate through the *original* order of elements based on the stored rects\n         for (const rectInfo of initialOptionRects) {\n              // Skip the element being dragged\n              if (rectInfo.element === touchDraggedElement) continue;\n\n              // Check if the touch Y is above the vertical midpoint of this option's initial position\n              const optionMidpointY = rectInfo.rect.top + rectInfo.rect.height / 2;\n              const touchY = touch.clientY;\n\n              if (touchY < optionMidpointY) {\n                  // The touch is above the midpoint of this option's initial position.\n                  // This means the dragged element should be inserted *before* this element.\n                  insertBeforeElement = rectInfo.element;\n                  break; // Found our insertion point, stop checking\n              }\n              // If the loop finishes without finding an insertion point, it means\n              // the touch is below the midpoint of the last element's initial position,\n              // so the dragged element should be inserted at the end.\n         }\n\n          // Visually reorder elements in the DOM temporarily to show insertion point\n          // This reordering uses the standard DOM structure, similar to mouse dragover\n          // It only happens if the dragged element is not already in the correct place relative to the potential insertion point\n          if (touchDraggedElement.parentElement === DOM.optionsContainer && touchDraggedElement !== insertBeforeElement) {\n              // Check if insertBeforeElement is actually a child of optionsContainer\n              // This is important if initialOptionRects includes elements not currently in the container (e.g., removed placeholders)\n              if (insertBeforeElement === null || DOM.optionsContainer.contains(insertBeforeElement)) {\n                  DOM.optionsContainer.insertBefore(touchDraggedElement, insertBeforeElement);\n              } else {\n                   // If the target element is somehow not in the container, just append to end\n                   DOM.optionsContainer.appendChild(touchDraggedElement);\n              }\n          }\n\n         // Optional: Update placeholder position if using one\n         // console.log('Touch move', touch.clientX, touch.clientY, 'Target:', insertBeforeElement ? insertBeforeElement.textContent : 'End');\n     }\n\n     function handleTouchEnd(event) {\n         // Only handle if a drag was in progress\n         if (!touchDraggedElement) return;\n\n         // Prevent default browser behavior (like click after touch)\n         // event.preventDefault(); // Prevent default here might interfere with submit button click after drag end\n\n         // The element is already in the correct temporary position in the DOM\n         // from the last `touchmove` event. Now we just finalize styles.\n\n         touchDraggedElement.classList.remove(CSS_CLASSES.DRAGGING);\n\n         // Reset positioning styles applied during the drag\n         touchDraggedElement.style.position = '';\n         touchDraggedElement.style.zIndex = '';\n         touchDraggedElement.style.left = '';\n         touchDraggedElement.style.top = '';\n         touchDraggedElement.style.width = ''; // Remove fixed width\n\n         // Clean up state variables\n         touchDraggedElement = null;\n         touchDragOffset = { x: 0, y: 0 };\n         initialOptionRects = []; // Clear stored rects\n         // if (touchPlaceholder && touchPlaceholder.parentElement) {\n         //     touchPlaceholder.parentElement.removeChild(touchPlaceholder);\n         // }\n         // touchPlaceholder = null;\n\n         // console.log('Touch drag end');\n     }\n\n     function handleTouchCancel(event) {\n          // Handle touch cancellation (e.g., too many touches, touch outside browser viewport)\n          // Reset styles and state if a drag was in progress\n          if (touchDraggedElement) {\n             touchDraggedElement.classList.remove(CSS_CLASSES.DRAGGING);\n             // Reset positioning styles\n             touchDraggedElement.style.position = '';\n             touchDraggedElement.style.zIndex = '';\n             touchDraggedElement.style.left = '';\n             touchDraggedElement.style.top = '';\n             touchDraggedElement.style.width = '';\n          }\n\n          // Clean up state\n          touchDraggedElement = null;\n          touchDragOffset = { x: 0, y: 0 };\n          initialOptionRects = [];\n         // if (touchPlaceholder && touchPlaceholder.parentElement) {\n         //     touchPlaceholder.parentElement.removeChild(touchPlaceholder);\n         // }\n         // touchPlaceholder = null;\n\n         // console.log('Touch drag cancelled');\n     }\n\n\n    // Public API\n    return {\n        DOM, // Expose DOM elements for eventHandlers.js\n        updateFilterDropdowns,\n        updateQuestionStats,\n        showSettings,\n        showTest,\n        showResults,\n        displayQuestion,\n        applyFeedbackStyles, // Needed by EventHandlers after submit\n        disableOptions, // Needed by EventHandlers after submit\n        enableOptions, // Needed by EventHandlers before displaying\n        getUserAnswerFromUI, // Needed by EventHandlers on submit\n        displayFeedback, // Needed by TestManager/App on finish\n        updateScoreDisplay, // Needed by TestManager/App on finish\n        updateProgressBar, // Needed by App/TestManager\n        updateStarCount, // Needed by Gamification\n        renderBadges, // Needed by Gamification\n        // Note: Drag/Touch handlers are internal to UIRenderer as they manage UI state directly\n        // They are attached to elements/container within renderOrderingOptions.\n    };\n})(Utils, TestManager); // Pass Utils and TestManager as arguments\n",
+      "start_lineno": 1,
+      "end_lineno": 880
+    },
+    "js/utils.js": {
+      "path": "js/utils.js",
+      "type": "js",
+      "full_content": "// js/utils.js\n\nconst Utils = (function() {\n    // --------------- CONSTANTS ---------------\n    const LOCAL_STORAGE_KEYS = {\n        QUESTIONS: 'mathQuestions',\n        STAR_COUNT: 'starCount',\n        BADGES: 'badges'\n    };\n\n    const FILTER_VALUES = {\n        ALL: 'all',\n        UNKNOWN: 'unknown',\n        GENERAL: 'general'\n    };\n\n    const QUESTION_TYPES = {\n        SINGLE: 'single',\n        MULTI_SELECT: 'multi-select',\n        FILL_IN: 'fill-in',\n        ORDERING: 'ordering'\n    };\n\n    const CSS_CLASSES = {\n        DRAG_OVER: 'drag-over',\n        DRAGGING: 'dragging',\n        SELECTED: 'selected',\n        CORRECT: 'correct',\n        INCORRECT: 'incorrect',\n        DISABLED: 'disabled',\n        DRAGGABLE: 'draggable',\n        PULSE: 'pulse',\n        SHAKE: 'shake',\n        FILL_IN_INPUT: 'fill-in-input',\n        OPTION: 'option'\n        \n    };\n\n    const BADGE_THRESHOLDS = {\n        BRONZE: 5,\n        SILVER: 10,\n        GOLD: 25,\n        PLATINUM: 50,\n        DIAMOND: 100\n    };\n\n     const BADGE_INFO = {\n         [BADGE_THRESHOLDS.BRONZE]: { type: 'bronze', icon: 'fas fa-medal', text: 'Bronze' },\n         [BADGE_THRESHOLDS.SILVER]: { type: 'silver', icon: 'fas fa-award', text: 'Silver' },\n         [BADGE_THRESHOLDS.GOLD]: { type: 'gold', icon: 'fas fa-trophy', text: 'Gold' },\n         [BADGE_THRESHOLDS.PLATINUM]: { type: 'platinum', icon: 'fas fa-crown', text: 'Platinum' },\n         [BADGE_THRESHOLDS.DIAMOND]: { type: 'diamond', icon: 'fas fa-gem', text: 'Diamond' },\n     };\n\n\n    // --------------- UTILITY FUNCTIONS ---------------\n    function shuffle(arr) {\n        let currentIndex = arr.length,\n            randomIndex;\n        while (currentIndex !== 0) {\n            randomIndex = Math.floor(Math.random() * currentIndex);\n            currentIndex--;\n            [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];\n        }\n        return arr;\n    }\n\n     function arraysAreEqual(arr1, arr2) {\n         if (arr1.length !== arr2.length) return false;\n         for (let i = 0; i < arr1.length; i++) {\n             if (String(arr1[i]) !== String(arr2[i])) return false;\n         }\n         return true;\n     }\n\n     function showSuccessMessage(message) {\n         console.log('Success:', message);\n         // TODO: Implement user-facing message display (e.g., temporary banner)\n     }\n\n     function showWarningMessage(message) {\n         console.warn('Warning:', message);\n         // TODO: Implement user-facing warning display\n     }\n\n     function showErrorMessage(message) {\n         console.error('Error:', message);\n         // TODO: Implement user-facing error display\n     }\n\n\n    // Public API\n    return {\n        LOCAL_STORAGE_KEYS,\n        FILTER_VALUES,\n        QUESTION_TYPES,\n        CSS_CLASSES,\n        BADGE_THRESHOLDS,\n        BADGE_INFO,\n        shuffle,\n        arraysAreEqual,\n        showSuccessMessage,\n        showWarningMessage,\n        showErrorMessage\n    };\n})();\n",
+      "start_lineno": 1,
+      "end_lineno": 106
+    }
+  },
+  "directory_tree": [
+    "./",
+    "Examples/",
+    "Examples/Math_grade4_Multiplication_Facts-of-7.json",
+    "Examples/grammer_grade4_punctuation_001.json",
+    "Examples/math_grade0_numeracy_001.json",
+    "Examples/math_grade0_numeracy_002.json",
+    "Examples/math_grade4_fractions_decimals_001.json",
+    "Examples/math_grade4_geometry_001.json",
+    "Examples/math_grade4_measurement_data_001.json",
+    "Examples/math_grade4_multiplication_division_001.json",
+    "Examples/math_grade4_placevalue_wordproblems_001.json",
+    "Examples/science_grade4_general_001.json",
+    "build_code_json.py",
+    "css/",
+    "css/style.css",
+    "index.html",
+    "js/",
+    "js/app.js",
+    "js/dataManager.js",
+    "js/eventHandlers.js",
+    "js/fileHandler.js",
+    "js/gamification.js",
+    "js/testManager.js",
+    "js/uiRenderer.js",
+    "js/utils.js",
+    "project_context_structured.json"
+  ]
+}

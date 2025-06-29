@@ -621,3 +621,46 @@ button:disabled {
     gap: 5px;
     margin: 2px;
 }
+
+/* New styles for API-driven player */
+.quiz-code-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quiz-code-input-group label {
+    font-size: 1.1rem;
+}
+
+.quiz-code-input-group input {
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.quiz-code-input-group button {
+    justify-content: center;
+}
+
+.loader-status {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    min-height: 1.5em; /* Prevent layout shift */
+    color: var(--text-light);
+}
+
+@media (min-width: 600px) {
+    .quiz-code-input-group {
+        flex-direction: row;
+        align-items: center;
+    }
+    .quiz-code-input-group label {
+        flex-shrink: 0;
+    }
+    .quiz-code-input-group input {
+        flex-grow: 1;
+    }
+}

@@ -14,11 +14,10 @@
 
 <body>
     <div class="container">
-        <!-- Header Section -->
         <header id="header">
             <h1 id="main-title">Quiz Me</h1>
             <p id="main-subtitle" class="subtitle">What have you mastered today?</p>
-            <!-- Gamification Panel -->
+            <!-- Gamification Panel remains the same -->
             <div class="gamification-panel">
                 <div class="stars-container">
                     <i class="fas fa-star"></i>
@@ -31,71 +30,33 @@
             </div>
         </header>
 
-        <!-- Settings Section -->
-        <div class="settings-panel">
-            <h2>Test Settings</h2>
-
-            <div class="filter-section">
-                <div class="filter-group">
-                    <label for="subject-filter"><i class="fas fa-book"></i> Subject:</label>
-                    <select id="subject-filter">
-                        <option value="all">All Subjects</option>
-                    </select>
+        <!-- VIEW 1: QUIZ CODE LOADER (Initially Visible) -->
+        <div id="loaderView" class="view">
+            <div class="settings-panel">
+                <h2>Load Your Quiz</h2>
+                <div class="quiz-code-input-group">
+                    <label for="quiz-code-input"><i class="fas fa-key"></i> Enter Quiz Code:</label>
+                    <input type="text" id="quiz-code-input" placeholder="e.g., A4B-9X1">
+                    <button id="load-quiz-btn"><i class="fas fa-download"></i> Load Quiz</button>
                 </div>
-                <div class="filter-group">
-                    <label for="grade-filter"><i class="fas fa-graduation-cap"></i> Grade Level:</label>
-                    <select id="grade-filter">
-                        <option value="all">All Levels</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filter-group identifier-filter">
-                <label for="identifier-filter"><i class="fas fa-tags"></i> Question Set:</label>
-                <select id="identifier-filter">
-                    <option value="all">All Question Sets</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="test-length"><i class="fas fa-ruler"></i> Test Length:</label>
-                <select id="test-length">
-                    <option value="1">Single Question</option>
-                    <option value="5">Short (5 questions)</option>
-                    <option value="10" selected>Medium (10 questions)</option>
-                    <option value="25">Long (25 questions)</option>
-                </select>
-            </div>
-
-            <div class="question-stats" id="question-stats">No questions loaded. Add question files to begin.</div>
-
-            <button id="start-test" class="pulse">
-                <i class="fas fa-play"></i> Start Test
-            </button>
-
-            <div class="file-upload" id="file-upload">
-                <p><i class="fas fa-cloud-upload-alt fa-2x"></i></p>
-                <p>Drag and drop question files here (.json)</p>
-                <p>or</p>
-                <button id="browse-files"><i class="fas fa-folder-open"></i> Browse Files</button>
-                <input type="file" id="file-input" accept=".json" multiple style="display: none;">
-            </div>
-
-            <div class="danger-zone">
-                <button id="reset-badges" class="danger-btn">
-                    <i class="fas fa-sync-alt"></i> Reset Badge Progress
-                </button>
-                <p class="warning-text">This will reset your star count and remove all earned badges.</p>
-
-                <button id="delete-questions" class="danger-btn">
-                    <i class="fas fa-trash-alt"></i> Delete All Questions
-                </button>
-                <p class="warning-text">This will permanently remove all loaded questions.</p>
+                <p id="loader-status" class="loader-status"></p>
             </div>
         </div>
 
-        <!-- Test Section -->
-        <div class="test-container">
+        <!-- VIEW 2: NICKNAME ENTRY (Initially Hidden) -->
+        <div id="nicknameView" class="view" style="display: none;">
+            <div class="settings-panel">
+                <h2 id="nickname-quiz-title">Quiz Title Here</h2>
+                <div class="quiz-code-input-group">
+                    <label for="nickname-input"><i class="fas fa-user"></i> Enter Your Name:</label>
+                    <input type="text" id="nickname-input" placeholder="Your Name">
+                    <button id="start-test-btn"><i class="fas fa-play"></i> Start Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 3: TEST CONTAINER (Initially Hidden) -->
+        <div id="testView" class="view test-container" style="display: none;">
             <!-- Test Progress Indicator -->
             <div class="progress">
                 <i class="fas fa-tasks"></i>
@@ -127,8 +88,8 @@
             </div>
         </div>
 
-        <!-- Results Section -->
-        <div class="results">
+        <!-- VIEW 4: RESULTS CONTAINER (Initially Hidden) -->
+        <div id="resultsView" class="view results" style="display: none;">
             <h2>Test Completed!</h2>
             <div class="score">Your Score: <span id="final-score">0</span>%</div>
             <div class="feedback" id="feedback-container"></div>
@@ -138,14 +99,13 @@
         </div>
     </div>
 
-    <!-- Link to external JavaScript files -->
-    <!-- Order matters: dependencies should be loaded first -->
+    <!-- JavaScript files -->
     <script src="js/utils.js"></script>
+    <script src="js/apiHandler.js"></script>
     <script src="js/dataManager.js"></script>
     <script src="js/testManager.js"></script>
     <script src="js/gamification.js"></script>
     <script src="js/uiRenderer.js"></script>
-    <script src="js/fileHandler.js"></script>
     <script src="js/eventHandlers.js"></script>
     <script src="js/app.js"></script>
 </body>
