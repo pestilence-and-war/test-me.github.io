@@ -38,7 +38,7 @@ async function handleLoadQuiz() {
 
     const quizData = await APIHandler.loadQuizByCode(currentQuizCode);
 
-    if (quizData && quizData.questions) {
+    if (quizData && Array.isArrayquizData.questions) {
         currentQuizData = quizData.questions;
         DataManager.loadQuizData(quizData.questions); // Load data into your existing system
         loaderStatus.textContent = `Quiz loaded successfully!`;
