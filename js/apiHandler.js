@@ -40,5 +40,24 @@ const APIHandler = (function(Utils) {
         }
     }
 
-    return { loadQuizByCode, startQuizSession };
+    async function submitResults(sessionId, userAnswers) {
+        const url = `${API_BASE_URL}/api/quiz-session/submit`;
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ session_id: sessionId, user_answers: userAnswers })
+            });
+            const data = await response.json();
+            if (!response.ok || !data.success) {
+                throw new Error(data.message || 'Could not submit results.');
+            }
+            return data;
+        } catch (error) {
+            Utils.showErrorMessage(error.message);
+            return null;
+        }
+    }
+
+    return { loadQuizByCode, startQuizSession, submitResults };
 })(Utils);

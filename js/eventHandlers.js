@@ -109,6 +109,18 @@ const EventHandlers = (function(Utils, UIRenderer, TestManager, Gamification) {
 
     function showTestResults() {
         const results = TestManager.getCurrentTestResults();
+        // We need the currentSessionId from app.js; for now we'll assume it's globally accessible
+        // A better approach would be to pass it through TestManager
+        if (window.currentSessionId) {
+            APIHandler.submitResults(window.currentSessionId, results.userAnswers)
+                .then(response => {
+                    if (response && response.success) {
+                        console.log("Results successfully submitted to server.");
+                    } else {
+                        console.warn("Failed to submit results to server.");
+                    }
+                });
+        }
         UIRenderer.updateScoreDisplay(results.score);
         UIRenderer.displayFeedback(results.userAnswers);
         UIRenderer.showResults();
