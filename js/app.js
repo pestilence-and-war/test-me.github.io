@@ -38,9 +38,16 @@ async function handleLoadQuiz() {
 
     const quizData = await APIHandler.loadQuizByCode(currentQuizCode);
 
-    if (quizData && Array.isArrayquizData.questions) {
-        currentQuizData = quizData.questions;
-        DataManager.loadQuizData(quizData.questions); // Load data into your existing system
+    if (!quizData) {
+        // The API handler already showed an error message. We just need to update the status text.
+        loaderStatus.textContent = 'Failed to load quiz. Please check the code and try again.';
+        loadQuizBtn.disabled = false;
+        return; // Stop execution
+    }
+
+    if (quizData && Array.isArray(quizData)) {
+        currentQuizData = quizData;
+        DataManager.loadQuizData(quizData); // Load data into your existing system
         loaderStatus.textContent = `Quiz loaded successfully!`;
         nicknameQuizTitle.textContent = quizData.title || 'Quiz Ready';
         showView('nickname');
